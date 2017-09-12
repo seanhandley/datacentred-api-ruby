@@ -1,0 +1,96 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://my.datacentred.io/api/users
+    body:
+      encoding: UTF-8
+      string: '{"user":{"email":"death@afterlife.com","password":"melvin11","first_name":"Foo","last_name":"Bar"}}'
+    headers:
+      Accept:
+      - application/vnd.datacentred.api+json; version=1
+      Authorization:
+      - Token token=access_key:secret_key
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Api-Version:
+      - '1'
+      Content-Type:
+      - application/vnd.datacentred.api+json; charset=utf-8
+      Etag:
+      - W/"fd296cfd72243215541d933409fafcbc"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 68390dff-6821-4588-8cee-f5b0f628712c
+      X-Runtime:
+      - '1.397181'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"user":{"id":"bd295e1c78574564845c24f271e6f525","email":"death@afterlife.com","first_name":"Foo","last_name":"Bar","created_at":"2017-09-05T18:42:27Z","updated_at":"2017-09-05T18:42:27Z","links":[{"href":"https://my.datacentred.io/api/users/bd295e1c78574564845c24f271e6f525","rel":"self"},{"href":"https://my.datacentred.io/api/schemas/user","rel":"schema"}]}}'
+    http_version:
+  recorded_at: Tue, 05 Sep 2017 18:42:28 GMT
+- request:
+    method: put
+    uri: https://my.datacentred.io/api/users/bd295e1c78574564845c24f271e6f525
+    body:
+      encoding: UTF-8
+      string: '{"user":{"password":"tiny"}}'
+    headers:
+      Accept:
+      - application/vnd.datacentred.api+json; version=1
+      Authorization:
+      - Token token=e9d2d4cd37adf1634e2a65b9e18a8fcb:821fac118e7675f28fa42ab79ace57de
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Api-Version:
+      - '1'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 2db58675-823f-4849-8abc-06672bfbec1e
+      X-Runtime:
+      - '0.605389'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"errors":[{"resource":"user","detail":"Password is too short (min
+        8 characters)."}],"links":[{"href":"https://my.datacentred.io/api","rel":"help"}]}'
+    http_version:
+  recorded_at: Tue, 05 Sep 2017 18:42:28 GMT
+recorded_with: VCR 2.8.0

@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://my.datacentred.io/api/roles
+    body:
+      encoding: UTF-8
+      string: '{"role":{"name":"Genghis Khan","permissions":["fighting"]}}'
+    headers:
+      Accept:
+      - application/vnd.datacentred.api+json; version=1
+      Authorization:
+      - Token token=access_key:secret_key
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Api-Version:
+      - '1'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 5ea49fc1-7e50-4694-bf70-58a8ca754da2
+      X-Runtime:
+      - '0.102730'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"errors":[{"resource":"role","detail":"Role permissions must be one
+        of: ''access requests.raise for others'', ''access requests.raise for self'',
+        ''api.read'', ''cloud.read'', ''roles.modify'', ''roles.read'', ''storage.read'',
+        ''tickets.modify'', ''usage.read''. ''fighting'' is not allowed.","field":"permissions"}],"links":[{"href":"https://my.datacentred.io/api","rel":"help"}]}'
+    http_version:
+  recorded_at: Tue, 05 Sep 2017 15:30:53 GMT
+recorded_with: VCR 2.8.0

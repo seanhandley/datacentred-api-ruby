@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://my.datacentred.io/api/users
+    body:
+      encoding: UTF-8
+      string: '{"user":{"email":"death@afterlife2.com"}}'
+    headers:
+      Accept:
+      - application/vnd.datacentred.api+json; version=1
+      Authorization:
+      - Token token=access_key:secret_key
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Server:
+      - nginx/1.10.3
+      Date:
+      - Wed, 30 Aug 2017 14:45:25 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Api-Version:
+      - '1'
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - be3cb73f-b6dd-4637-9c10-6e202963316b
+      X-Runtime:
+      - '0.419927'
+    body:
+      encoding: UTF-8
+      string: '{"errors":[{"resource":"user","detail":"User password can''t be blank.","field":"password"}],"links":[{"href":"https://my.datacentred.io/api","rel":"help"}]}'
+    http_version:
+  recorded_at: Wed, 30 Aug 2017 14:45:26 GMT
+recorded_with: VCR 2.8.0

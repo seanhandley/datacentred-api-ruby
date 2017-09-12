@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://my.datacentred.io/api/roles
+    body:
+      encoding: UTF-8
+      string: '{"role":{"name":"Historical Figures","permissions":["usage.read","tickets.modify"]}}'
+    headers:
+      Accept:
+      - application/vnd.datacentred.api+json; version=1
+      Authorization:
+      - Token token=access_key:secret_key
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Api-Version:
+      - '1'
+      Content-Type:
+      - application/vnd.datacentred.api+json; charset=utf-8
+      Etag:
+      - W/"58fbc2acd5012da79f2345aab145f3b3"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - dbe6ca37-dd5a-40ce-9bdd-c326a7df1c71
+      X-Runtime:
+      - '0.117976'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"role":{"id":"91673b37-99ee-4ff5-bd61-d64af4b8be8c","name":"Historical
+        Figures","admin":false,"permissions":["usage.read","tickets.modify"],"created_at":"2017-09-05T15:30:35Z","updated_at":"2017-09-05T15:30:35Z","links":[{"href":"https://my.datacentred.io/api/roles/91673b37-99ee-4ff5-bd61-d64af4b8be8c","rel":"self"},{"href":"https://my.datacentred.io/api/schemas/role","rel":"schema"}]}}'
+    http_version: 
+  recorded_at: Tue, 05 Sep 2017 15:30:35 GMT
+recorded_with: VCR 2.8.0

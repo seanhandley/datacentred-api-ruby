@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://my.datacentred.io/api/projects/project_id1/users
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.datacentred.api+json; version=1
+      Authorization:
+      - Token token=access_key:secret_key
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.3
+      Date:
+      - Wed, 30 Aug 2017 10:40:40 GMT
+      Content-Type:
+      - application/vnd.datacentred.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Api-Version:
+      - '1'
+      Etag:
+      - W/"4b9146d3f170bfe5ae80792079f0bc7d"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 98d6ab23-2b8e-4412-89da-b2dbb2795b95
+      X-Runtime:
+      - '0.174165'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"users":[{"id":"bda96ae2c89347d5a059d663c153ec2a","email":"eugeniagrieff@gmail.com","first_name":"Eugenia","last_name":"Grieff","created_at":"2016-02-25T17:01:20Z","updated_at":"2017-08-30T10:26:39Z","links":[{"href":"https://my.datacentred.io/api/users/bda96ae2c89347d5a059d663c153ec2a","rel":"self"},{"href":"https://my.datacentred.io/api/schemas/user","rel":"schema"}]},{"id":"user_id","email":"megrieff@gmail.com","first_name":"Eugenia","last_name":"Grieff","created_at":"2017-05-23T08:36:23Z","updated_at":"2017-08-08T11:54:48Z","links":[{"href":"https://my.datacentred.io/api/users/user_id","rel":"self"},{"href":"https://my.datacentred.io/api/schemas/user","rel":"schema"}]}]}'
+    http_version:
+  recorded_at: Wed, 30 Aug 2017 10:40:40 GMT
+recorded_with: VCR 2.8.0

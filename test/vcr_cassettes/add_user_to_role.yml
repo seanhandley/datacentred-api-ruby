@@ -1,0 +1,187 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://my.datacentred.io/api/roles
+    body:
+      encoding: UTF-8
+      string: '{"role":{"name":"New Role"}}'
+    headers:
+      Accept:
+      - application/vnd.datacentred.api+json; version=1
+      Authorization:
+      - Token token=access_key:secret_key
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Api-Version:
+      - '1'
+      Content-Type:
+      - application/vnd.datacentred.api+json; charset=utf-8
+      Etag:
+      - W/"3b9b0331bd0342e07befc2763cc250a7"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 9b223a95-6742-48ea-90c9-6886eb7c4567
+      X-Runtime:
+      - '0.143252'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"role":{"id":"46b76828-2e99-41fa-b935-668b14d2c850","name":"New Role","admin":false,"permissions":[],"created_at":"2017-09-06T09:25:46Z","updated_at":"2017-09-06T09:25:46Z","links":[{"href":"https://my.datacentred.io/api/roles/46b76828-2e99-41fa-b935-668b14d2c850","rel":"self"},{"href":"https://my.datacentred.io/api/schemas/role","rel":"schema"}]}}'
+    http_version:
+  recorded_at: Wed, 06 Sep 2017 09:25:46 GMT
+- request:
+    method: get
+    uri: https://my.datacentred.io/api/roles/46b76828-2e99-41fa-b935-668b14d2c850/users
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.datacentred.api+json; version=1
+      Authorization:
+      - Token token=e9d2d4cd37adf1634e2a65b9e18a8fcb:821fac118e7675f28fa42ab79ace57de
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Api-Version:
+      - '1'
+      Content-Type:
+      - application/vnd.datacentred.api+json; charset=utf-8
+      Etag:
+      - W/"adac7b84dc3b7394d8385aa0c65fe27a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 62466fe5-3c54-4562-ab14-c70d4cd5208e
+      X-Runtime:
+      - '0.105758'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"users":[]}'
+    http_version:
+  recorded_at: Wed, 06 Sep 2017 09:25:46 GMT
+- request:
+    method: put
+    uri: https://my.datacentred.io/api/roles/46b76828-2e99-41fa-b935-668b14d2c850/users/06eacbafda355a927f50f304db3af132
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.datacentred.api+json; version=1
+      Authorization:
+      - Token token=e9d2d4cd37adf1634e2a65b9e18a8fcb:821fac118e7675f28fa42ab79ace57de
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Api-Version:
+      - '1'
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 98907f33-6b49-4c4a-9605-cfb1f1dab1c1
+      X-Runtime:
+      - '0.112941'
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version:
+  recorded_at: Wed, 06 Sep 2017 09:25:47 GMT
+- request:
+    method: get
+    uri: https://my.datacentred.io/api/roles/46b76828-2e99-41fa-b935-668b14d2c850/users
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.datacentred.api+json; version=1
+      Authorization:
+      - Token token=e9d2d4cd37adf1634e2a65b9e18a8fcb:821fac118e7675f28fa42ab79ace57de
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Api-Version:
+      - '1'
+      Content-Type:
+      - application/vnd.datacentred.api+json; charset=utf-8
+      Etag:
+      - W/"a49ddef61fd02a4859e54c61f0d506bb"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - d0c48633-f6ee-45c6-9501-f8e78ef89e4f
+      X-Runtime:
+      - '0.097074'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"users":[{"id":"06eacbafda355a927f50f304db3af132","email":"eugenia.grieff@datacentred.co.uk","first_name":"Eugenia","last_name":"Grieff","created_at":"2017-07-20T13:06:20Z","updated_at":"2017-07-20T13:06:20Z","links":[{"href":"https://my.datacentred.io/api/users/06eacbafda355a927f50f304db3af132","rel":"self"},{"href":"https://my.datacentred.io/api/schemas/user","rel":"schema"}]}]}'
+    http_version:
+  recorded_at: Wed, 06 Sep 2017 09:25:47 GMT
+recorded_with: VCR 2.8.0

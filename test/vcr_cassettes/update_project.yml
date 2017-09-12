@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://my.datacentred.io/api/projects/project_id2
+    body:
+      encoding: UTF-8
+      string: '{"project":{"name":"new_project_name"}}'
+    headers:
+      Accept:
+      - application/vnd.datacentred.api+json; version=1
+      Authorization:
+      - Token token=access_key:secret_key
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.3
+      Date:
+      - Wed, 30 Aug 2017 13:52:49 GMT
+      Content-Type:
+      - application/vnd.datacentred.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Api-Version:
+      - '1'
+      Etag:
+      - W/"44f59a8c8ff577611c188b9b55637128"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e3953be0-3278-4675-89f0-cbfd4719369f
+      X-Runtime:
+      - '1.301371'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"project":{"id":"project_id2","name":"test_new_project_name","created_at":"2017-08-30T13:52:06Z","updated_at":"2017-08-30T13:52:49Z","quota_set":{"compute":{"instances":5,"cores":5,"ram":10240},"volume":{"volumes":4,"snapshots":4,"gigabytes":40},"network":{"floatingip":1,"router":1,"security_group_rule":100,"security_group":10,"network":10,"port":10,"subnet":10,"pool":10,"vip":10}},"links":[{"href":"https://my.datacentred.io/api/projects/project_id2","rel":"self"},{"href":"https://my.datacentred.io/api/schemas/project","rel":"schema"}]}}'
+    http_version:
+  recorded_at: Wed, 30 Aug 2017 13:52:49 GMT
+recorded_with: VCR 2.8.0

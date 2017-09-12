@@ -1,0 +1,98 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://my.datacentred.io/api/roles
+    body:
+      encoding: UTF-8
+      string: '{"role":{"name":"New Role"}}'
+    headers:
+      Accept:
+      - application/vnd.datacentred.api+json; version=1
+      Authorization:
+      - Token token=access_key:secret_key
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Api-Version:
+      - '1'
+      Content-Type:
+      - application/vnd.datacentred.api+json; charset=utf-8
+      Etag:
+      - W/"1d263f2b35ea28248d64757b67bcf242"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 58ac29b0-0ffe-42bd-80d0-b1d21189fa0d
+      X-Runtime:
+      - '0.133222'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"role":{"id":"45f75b4d-2773-4719-9e09-a913ed244f3e","name":"New Role","admin":false,"permissions":[],"created_at":"2017-09-05T15:31:22Z","updated_at":"2017-09-05T15:31:22Z","links":[{"href":"https://my.datacentred.io/api/roles/45f75b4d-2773-4719-9e09-a913ed244f3e","rel":"self"},{"href":"https://my.datacentred.io/api/schemas/role","rel":"schema"}]}}'
+    http_version: 
+  recorded_at: Tue, 05 Sep 2017 15:31:22 GMT
+- request:
+    method: put
+    uri: https://my.datacentred.io/api/roles/45f75b4d-2773-4719-9e09-a913ed244f3e
+    body:
+      encoding: UTF-8
+      string: '{"role":{"name":"Administrator 2"}}'
+    headers:
+      Accept:
+      - application/vnd.datacentred.api+json; version=1
+      Authorization:
+      - Token token=e9d2d4cd37adf1634e2a65b9e18a8fcb:821fac118e7675f28fa42ab79ace57de
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Api-Version:
+      - '1'
+      Content-Type:
+      - application/vnd.datacentred.api+json; charset=utf-8
+      Etag:
+      - W/"65a3ea5b4cfe4f058860635d25b12b07"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 5bcadb58-537d-4e32-b0b1-2240979c7d8b
+      X-Runtime:
+      - '0.112445'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"role":{"id":"45f75b4d-2773-4719-9e09-a913ed244f3e","name":"Administrator
+        2","admin":false,"permissions":[],"created_at":"2017-09-05T15:31:22Z","updated_at":"2017-09-05T15:31:23Z","links":[{"href":"https://my.datacentred.io/api/roles/45f75b4d-2773-4719-9e09-a913ed244f3e","rel":"self"},{"href":"https://my.datacentred.io/api/schemas/role","rel":"schema"}]}}'
+    http_version: 
+  recorded_at: Tue, 05 Sep 2017 15:31:23 GMT
+recorded_with: VCR 2.8.0

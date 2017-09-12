@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://my.datacentred.io/api/projects
+    body:
+      encoding: UTF-8
+      string: '{"project":{"name":"test_new_project"}}'
+    headers:
+      Accept:
+      - application/vnd.datacentred.api+json; version=1
+      Authorization:
+      - Token token=access_key:secret_key
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Server:
+      - nginx/1.10.3
+      Date:
+      - Wed, 30 Aug 2017 09:53:49 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Api-Version:
+      - '1'
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 15926f87-8d3b-41d1-987c-f63107c62571
+      X-Runtime:
+      - '0.600159'
+    body:
+      encoding: UTF-8
+      string: '{"errors":[{"resource":"project","detail":"Project name is already
+        in use.","field":"name"},{"resource":"project","detail":"This account''s limits
+        only permit 2 projects."}],"links":[{"href":"https://my.datacentred.io/api","rel":"help"}]}'
+    http_version:
+  recorded_at: Wed, 30 Aug 2017 09:53:48 GMT
+recorded_with: VCR 2.8.0

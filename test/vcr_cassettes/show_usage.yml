@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://my.datacentred.io/api/usage/2017/7
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.datacentred.api+json; version=1
+      Authorization:
+      - Token token=e9d2d4cd37adf1634e2a65b9e18a8fcb:821fac118e7675f28fa42ab79ace57de
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Api-Version:
+      - '1'
+      Content-Type:
+      - application/vnd.datacentred.api+json; charset=utf-8
+      Etag:
+      - W/"c8bb3838c7292d5d8cbc51497edfaaeb"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b03cbd08-1a6d-448c-b1f4-ffb88cfad578
+      X-Runtime:
+      - '0.248797'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"last_updated_at":"2017-09-05T18:53:06Z","projects":[{"id":"612bfb90f93c4b6e9ba515d51bb16022","name":"datacentred","usage":{"images":[],"instances":[],"ips":{"current_quota":1,"quota_changes":[],"usage":[{"value":0,"unit":"hours","cost":{"currency":"gbp","value":0.0,"rate":0.0027}}]},"load_balancers":[],"object_storage":{"usage":[{"cost":{"currency":"gbp","rate":0.0313,"value":0.0},"unit":"terabyte
+        hours","value":0.0}]},"volumes":[],"vpns":[]}}],"links":[{"href":"https://my.datacentred.io/api/usage/2017/7","rel":"self"},{"href":"https://my.datacentred.io/api/schemas/usage","rel":"schema"}]}'
+    http_version: 
+  recorded_at: Wed, 06 Sep 2017 12:45:03 GMT
+recorded_with: VCR 2.8.0

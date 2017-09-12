@@ -1,0 +1,140 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://my.datacentred.io/api/projects/project_id1/users
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.datacentred.api+json; version=1
+      Authorization:
+      - Token token=access_key:secret_key
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Api-Version:
+      - '1'
+      Content-Type:
+      - application/vnd.datacentred.api+json; charset=utf-8
+      Etag:
+      - W/"a49ddef61fd02a4859e54c61f0d506bb"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 655310e5-7e32-4111-bc58-0969fba85ef8
+      X-Runtime:
+      - '0.101663'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"users":[{"id":"06eacbafda355a927f50f304db3af132","email":"foo@bar.com","first_name":"Foo","last_name":"Bar","created_at":"2017-07-20T13:06:20Z","updated_at":"2017-07-20T13:06:20Z","links":[{"href":"https://my.datacentred.io/api/users/06eacbafda355a927f50f304db3af132","rel":"self"},{"href":"https://my.datacentred.io/api/schemas/user","rel":"schema"}]}]}'
+    http_version:
+  recorded_at: Tue, 05 Sep 2017 15:17:43 GMT
+- request:
+    method: put
+    uri: https://my.datacentred.io/api/projects/project_id1/users/user_id
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.datacentred.api+json; version=1
+      Authorization:
+      - Token token=e9d2d4cd37adf1634e2a65b9e18a8fcb:821fac118e7675f28fa42ab79ace57de
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Api-Version:
+      - '1'
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 04084f5b-0ede-46d5-84a0-a546e1db7507
+      X-Runtime:
+      - '0.143236'
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version:
+  recorded_at: Tue, 05 Sep 2017 15:17:43 GMT
+- request:
+    method: get
+    uri: https://my.datacentred.io/api/projects/project_id1/users
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.datacentred.api+json; version=1
+      Authorization:
+      - Token token=e9d2d4cd37adf1634e2a65b9e18a8fcb:821fac118e7675f28fa42ab79ace57de
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Api-Version:
+      - '1'
+      Content-Type:
+      - application/vnd.datacentred.api+json; charset=utf-8
+      Etag:
+      - W/"89f589a53690f0175b3b8ee53ccdc4b0"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 8e3f4a76-6122-4512-9d15-25fb027180f4
+      X-Runtime:
+      - '0.100477'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"users":[{"id":"user_id","email":"foo1@bar.com","first_name":"Foo1","last_name":"Bar","created_at":"2017-07-20T13:06:20Z","updated_at":"2017-07-20T13:06:20Z","links":[{"href":"https://my.datacentred.io/api/users/user_id","rel":"self"},{"href":"https://my.datacentred.io/api/schemas/user","rel":"schema"}]},{"id":"06eacbafda355a927f50f304db3af132","email":"foo@bar.com","first_name":"Foo","last_name":"Bar","created_at":"2017-07-20T13:06:20Z","updated_at":"2017-07-20T13:06:20Z","links":[{"href":"https://my.datacentred.io/api/users/06eacbafda355a927f50f304db3af132","rel":"self"},{"href":"https://my.datacentred.io/api/schemas/user","rel":"schema"}]}]}'
+    http_version:
+  recorded_at: Tue, 05 Sep 2017 15:17:43 GMT
+recorded_with: VCR 2.8.0

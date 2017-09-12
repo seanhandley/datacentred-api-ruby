@@ -1,0 +1,97 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://my.datacentred.io/api/users
+    body:
+      encoding: UTF-8
+      string: '{"user":{"email":"death@afterlife.com","password":"melvin11","first_name":"Foo","last_name":"Bar"}}'
+    headers:
+      Accept:
+      - application/vnd.datacentred.api+json; version=1
+      Authorization:
+      - Token token=access_key:secret_key
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Api-Version:
+      - '1'
+      Content-Type:
+      - application/vnd.datacentred.api+json; charset=utf-8
+      Etag:
+      - W/"77470e294fa860e142229fc3d6c148b1"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 794b24d4-2d5a-4a16-8d3e-cfdd08d6b7e7
+      X-Runtime:
+      - '1.776653'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"user":{"id":"1baca4d531ee475fa083c713e1b617c5","email":"death@afterlife.com","first_name":"Foo","last_name":"Bar","created_at":"2017-09-05T18:37:56Z","updated_at":"2017-09-05T18:37:56Z","links":[{"href":"https://my.datacentred.io/api/users/1baca4d531ee475fa083c713e1b617c5","rel":"self"},{"href":"https://my.datacentred.io/api/schemas/user","rel":"schema"}]}}'
+    http_version:
+  recorded_at: Tue, 05 Sep 2017 18:37:58 GMT
+- request:
+    method: get
+    uri: https://my.datacentred.io/api/users/1baca4d531ee475fa083c713e1b617c5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.datacentred.api+json; version=1
+      Authorization:
+      - Token token=access_key:secret_key
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Api-Version:
+      - '1'
+      Content-Type:
+      - application/vnd.datacentred.api+json; charset=utf-8
+      Etag:
+      - W/"77470e294fa860e142229fc3d6c148b1"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 5c58c66d-302f-40ce-997d-9bea48e72cce
+      X-Runtime:
+      - '0.097506'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"user":{"id":"1baca4d531ee475fa083c713e1b617c5","email":"death@afterlife.com","first_name":"Foo","last_name":"Bar","created_at":"2017-09-05T18:37:56Z","updated_at":"2017-09-05T18:37:56Z","links":[{"href":"https://my.datacentred.io/api/users/1baca4d531ee475fa083c713e1b617c5","rel":"self"},{"href":"https://my.datacentred.io/api/schemas/user","rel":"schema"}]}}'
+    http_version:
+  recorded_at: Tue, 05 Sep 2017 18:37:58 GMT
+recorded_with: VCR 2.8.0
