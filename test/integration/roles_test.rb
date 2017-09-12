@@ -3,14 +3,14 @@ require_relative '../test_helper'
 module Datacentred
   class RolesIntegrationTest < Minitest::Test
     def setup
-      @create_params1      = {"role" => {"name" => "New Role"}}
-      @create_params2      = {"role" => {"name" => "Historical Figures",
-                              "permissions" => ["usage.read","tickets.modify"]}}
-      @new_permissions     = {"role" => {"permissions" => ['usage.read',
-                              'roles.modify', 'roles.read']}}
-      @invalid_permissions = {"role" => {"name" => "Genghis Khan",
-                              "permissions" => ["fighting"]}}
-      @update_params       = {"role" => {"name" => "Administrator 2"}}
+      @create_params1      = {name: "New Role"}
+      @create_params2      = {name: "Historical Figures",
+                              permissions: ["usage.read","tickets.modify"]}
+      @new_permissions     = {permissions: ['usage.read',
+                              'roles.modify', 'roles.read']}
+      @invalid_permissions = {name: "Genghis Khan",
+                              permissions: ["fighting"]}
+      @update_params       = {name: "Administrator 2"}
       @user_id             = "06eacbafda355a927f50f304db3af132"
     end
 
@@ -49,7 +49,7 @@ module Datacentred
 
     def test_create_role_with_invalid_permissions
       VCR.use_cassette('create_role_with_invalid_permissions') do
-        assert_raises(Datacentred::UnprocessableEntity) do
+        assert_raises(Datacentred::Errors::UnprocessableEntity) do
           @role = Datacentred::Role.create(@invalid_permissions)
         end
       end
@@ -67,7 +67,7 @@ module Datacentred
     def test_update_role_with_invalid_permissions
       VCR.use_cassette('update_role_with_invalid_permissions') do
         @role = Datacentred::Role.create(@create_params1)
-        assert_raises(Datacentred::UnprocessableEntity) do
+        assert_raises(Datacentred::Errors::UnprocessableEntity) do
           Datacentred::Role.update(@role.id, @invalid_permissions)
         end
       end
@@ -77,8 +77,8 @@ module Datacentred
       VCR.use_cassette('delete_role') do
         @role = Datacentred::Role.create(@create_params1)
         assert Datacentred::Role.find(@role.id)
-        Datacentred::Role.delete(@role.id)
-        assert_raises(Datacentred::NotFoundError) do
+        Datacentred::Role.destroy(@role.id)
+        assert_raises(Datacentred::Errors::NotFound) do
           @role = Datacentred::Role.find(@role.id)
         end
       end
@@ -97,7 +97,7 @@ module Datacentred
         @role = Datacentred::Role.create(@create_params1)
         @user_list = Datacentred::Role.users(@role.id)
         assert_equal @user_list.count, 0
-        Datacentred::Role.add_user(@role.id, @user_id)
+        assert Datacentred::Role.add_user role_id: @role.id, user_id: @user_id
         @new_users_list = Datacentred::Role.users(@role.id)
         assert_equal @new_users_list.count, 1
         assert_equal @new_users_list.first.id, @user_id
@@ -107,10 +107,10 @@ module Datacentred
     def test_remove_user_from_role
       VCR.use_cassette('remove_user_from_role') do
         @role = Datacentred::Role.create(@create_params1)
-        Datacentred::Role.add_user(@role.id, @user_id)
+        assert Datacentred::Role.add_user role_id: @role.id, user_id: @user_id
         @user_list = Datacentred::Role.users(@role.id)
         assert_equal @user_list.count, 1
-        Datacentred::Role.remove_user(@role.id, @user_id)
+        assert Datacentred::Role.remove_user role_id: @role.id, user_id: @user_id
         @new_user_list = Datacentred::Role.users(@role.id)
         assert_equal @new_user_list.count, 0
       end
@@ -119,8 +119,8 @@ module Datacentred
     def test_remove_user_from_role_not_found
       VCR.use_cassette('remove_user_from_role_not_found') do
         @role = Datacentred::Role.create(@create_params1)
-        assert_raises(Datacentred::NotFoundError) do
-          Datacentred::Role.remove_user(@role.id, "unknown")
+        assert_raises(Datacentred::Errors::NotFound) do
+          Datacentred::Role.remove_user role_id: @role.id, user_id: "unknown"
         end
       end
     end

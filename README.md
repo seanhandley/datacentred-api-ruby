@@ -1,17 +1,13 @@
 ![Datacentred](https://assets-cdn.datacentred.io/assets/DC_Mono_B-903aac5ca4f5c6887193d880dbd1196deb8a978027eef5cb32de78b66d085935.png)
 
-Gem wrapper for [my.datacentred.io](https://my.datacentred.io) API.
+Ruby client library for automating DataCentred account management.
+
+[www.datacentred.co.uk](https://www.datacentred.co.uk)
 
 [![CircleCI](https://circleci.com/gh/datacentred/datacentred-api-ruby.svg?style=svg&circle-token=c284db6421742dcfe8c50f52945c31d9b976effb)](https://circleci.com/gh/datacentred/datacentred-api-ruby)
 [![Gem Version](https://badge.fury.io/rb/datacentred.png)](http://badge.fury.io/rb/keybase-core)
 
-## TO DO BEFORE RELEASE
-
-* [x] Remove sensitive data from history
-* [ ] Code review
-* [ ] Doc review (plus upload to rubydoc.org)
-
-## Installing
+# Installation
 
 ```
 gem install datacentred
@@ -30,7 +26,7 @@ then
 require 'datacentred'
 ```
 
-## Usage
+# Usage
 
 This API allows you to automate operations against your DataCentred account.
 
@@ -40,21 +36,18 @@ Operations include:
 * Creating and managing roles for users;
 * Managing OpenStack Project creation, quota adjustments, and user assignments;
 * Viewing detailed usage/billing information for your account.
-* If you have any questions or need any help, please [raise a support ticket!](https://my.datacentred.io/account/tickets)
 
-
-### Authentication
+## Authentication
 
 The API uses two pieces of information to authenticate access.
 
-A unique access key specific to your DataCentred account;
-A secret key which is generated once.
+A unique access key specific to your DataCentred account, and a secret key which is generated once.
 
 To get started:
 
-1. Grab your API access key and secret key via my.datacentred.io
+1. Find your API access key and secret key at [my.datacentred.io](https://my.datacentred.io)
 
-<!--  Image example -->
+![API Credentials](https://user-images.githubusercontent.com/98526/30334767-79f4617c-97d8-11e7-962c-ec3115d13896.png)
 
 2. Set your credentials by exporting your access key and secret key as environment variables:
 
@@ -70,133 +63,98 @@ Datacentred.access_key = 'my_access'
 Datacentred.secret_key = 'my_secret'
 ```
 
-This will override existing environment variables values.
+NOTE: If you use this approach, the gem will ignore any values assigned to the environment variables.
 
+## Usage Examples
 
-### Users
+The `User`, `Project`, and `Role` entities all support CRUD operations via the following methods:
 
-  * List all available users
+* `.all` - returns an index of all entities of this type.
+* `.create params` - creates a new entity where `params` is a hash of properties.
+* `.update id, params` - updates the entity identified by `id` with the hash of properties defined by `params`.
+* `.find id` - finds the entity via the unique identifier `id`.
+* `.destroy id` - removes the entity via the unique identifier `id`.
+
+Here are some worked examples:
+
+### List all available users
 
 ```ruby
 Datacentred::User.all
+# => [#<Datacentred::Model::User id="2bd21ee25cde40fdb9454954e4fbb4b5", ...>, ...]
 ```
 
-Will return a list of all members of this account:
-
-```json
-{
-  "users": [
-    {
-      "created_at": "2017-02-01T16:20:00Z",
-      "email": "bill.s.preston@bodacious.com",
-      "first_name": "Bill S.",
-      "id": "293c38b7ec52c355414c6e975cde882f",
-      "last_name": "Preston",
-      "links": [
-        {
-          "href": "https://my.datacentred.io/api/users/293c38b7ec52c355414c6e975cde882f",
-          "rel": "self"
-        },
-        {
-          "href": "https://my.datacentred.io/api/schemas/user",
-          "rel": "schema"
-        }
-      ],
-      "updated_at": "2017-02-01T16:20:00Z"
-    },
-    {
-      "created_at": "2017-02-01T16:20:00Z",
-      "email": "elizabeth@ironmaiden.com",
-      "first_name": "Elizabeth",
-      "id": "fdd7020adf1ddff29b0f6b41a5a8a919",
-      "last_name": "Princess",
-      "links": [
-        {
-          "href": "https://my.datacentred.io/api/users/fdd7020adf1ddff29b0f6b41a5a8a919",
-          "rel": "self"
-        },
-        {
-          "href": "https://my.datacentred.io/api/schemas/user",
-          "rel": "schema"
-        }
-      ],
-      "updated_at": "2017-02-01T16:20:00Z"
-    }
-  ]
-}
-```
-
-
-* Update a user
+### Find a user by id
 
 ```ruby
-Datacentred::User.update(user_id, params)
+Datacentred::User.find "2bd21ee25cde40fdb9454954e4fbb4b5"
+# => #<Datacentred::Model::User id="2bd21ee25cde40fdb9454954e4fbb4b5", ...>
 ```
 
-  Example
+### Update a project
 
 ```ruby
-Datacentred::User.update("6d5277716c4b10d2177814af50b77175", {"user": {"first_name": "Grim"}})
+Datacentred::Project.update "6d5277716c4b10d2177814af50b77175", name: "Foo"
+# => #<Datacentred::Model::Project id="6d5277716c4b10d2177814af50b77175", name= "Foo", ...>
 ```
 
-Will return updated user:
+### Create a role
 
-```json
-{
- "user": {
-   "created_at": "2017-02-01T16:20:00Z",
-   "email": "death@afterlife.com",
-   "first_name": "Grim",
-   "id": "6d5277716c4b10d2177814af50b77175",
-   "last_name": null,
-   "links": [
-     {
-       "href": "https://my.datacentred.io/api/users/6d5277716c4b10d2177814af50b77175",
-       "rel": "self"
-     },
-     {
-       "href": "https://my.datacentred.io/api/schemas/user",
-       "rel": "schema"
-     }
-   ],
-   "updated_at": "2017-02-01T16:20:00Z"
- }
-}
-```
-
-### Usage
-
-* Get usage data
+Acceptable permissions are: 'api.read', 'cloud.read', 'roles.modify', 'roles.read', 'storage.read', 'tickets.modify', 'usage.read'.
 
 ```ruby
-Datacentred::Usage.show(year, month)
+Datacentred::Role.create name: "foo", permissions: ["usage.read"]
+# => #<Datacentred::Model::Role id="654f423e-646a-4742-849d-d8c9ab9b4f39", name="foo", admin=false, permissions=["usage.read"] ...>
 ```
 
-  Example
+### Add a user to a role
 
 ```ruby
-Datacentred::Usage.show(2017, 6)
+Datacentred::Role.add_user role_id: "654f423e-646a-4742-849d-d8c9ab9b4f39", user_id: "2bd21ee25cde40fdb9454954e4fbb4b5"
+# => true
 ```
 
-Will return usage for given year and month
+### Remove a user from a project
 
-```json
-{
-  "last_updated_at": "2017-07-12T10:46:54Z",
-  "links": [
-    {
-      "href": "https://my.datacentred.io/api/usage/2017/6",
-      "rel": "self"
-    },
-    {
-      "href": "https://my.datacentred.io/api/schemas/usage",
-      "rel": "schema"
-    }
-  ],
-  "projects": [...]
-}
+```ruby
+Datacentred::Project.remove_user project_id: "6d5277716c4b10d2177814af50b77175", user_id: "2bd21ee25cde40fdb9454954e4fbb4b5"
+# => true
 ```
 
-## Further Reading
+### Get usage data for a given year and month
 
-Please check out the [DataCentred API Documentation](https://my.datacentred.io/api/docs/v1) for a comprehensive explanation of the API and its capabilities.
+Usage data is returned simply by supplying a year and a month. If the year/month are current then the data will be as recent as the time contained within the `last_updated_at` property.
+
+```ruby
+@usage = Datacentred::Usage.find 2017, 6
+# => #<Datacentred::Model::Usage last_updated_at=2017-07-12 09:46:54 UTC, projects=[{:id=>"37033518a4514f12adeb8346ac3f188c"
+@usage.projects.first.name
+# => "wyld_stallyns"
+@usage.projects.first.usage.instances.first.current_flavor.name
+=> "dc1.1x1"
+```
+
+## Schemas
+
+There are JSON schemas available for each entity in the gem:
+
+* Projects: https://my.datacentred.io/api/schemas/project
+* Roles: https://my.datacentred.io/api/schemas/role
+* Usage: https://my.datacentred.io/api/schemas/usage
+* User: https://my.datacentred.io/api/schemas/user
+
+## Errors
+
+The gem may raise the following standard errors:
+
+* `Unauthorized` - Your credentials are incorrect or your account isn't authorized for API access.
+* `NotFound` - The entity you referred to can't be found with the ID you supplied.
+* `UnprocessableEntity` - There was a validation issue with your request (only applies to create/delete/update operations)
+
+## Documentation
+
+Full documentation is also available via https://datacentred.github.io/datacentred-api-ruby/
+
+## API Reference Manual
+
+Please check out the [DataCentred API Documentation](https://my.datacentred.io/api/docs/v1) for a comprehensive description of the API itself.

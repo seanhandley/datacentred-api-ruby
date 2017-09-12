@@ -1,5 +1,9 @@
-require_relative '../lib/datacentred'
-require 'json'
+require 'simplecov'
+SimpleCov.start
+
+ENV["RAILS_ENV"] = "test"
+$VERBOSE = nil
+
 require 'vcr'
 
 VCR.configure do |c|
@@ -7,8 +11,7 @@ VCR.configure do |c|
   c.hook_into :webmock
 end
 
-TEST_ENV = true
+require_relative '../lib/datacentred'
 
-require 'rubygems'
-gem "minitest"
+require 'webmock/minitest'
 require 'minitest/autorun'

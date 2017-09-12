@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.9.9
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "README";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="file_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><div id='filecontents'><p><img src="https://assets-cdn.datacentred.io/assets/DC_Mono_B-903aac5ca4f5c6887193d880dbd1196deb8a978027eef5cb32de78b66d085935.png" alt="Datacentred"></p>
+
+<p>Ruby client library for automating DataCentred account management.</p>
+
+<p><a href="https://www.datacentred.co.uk">www.datacentred.co.uk</a></p>
+
+<p><a href="https://circleci.com/gh/datacentred/datacentred-api-ruby"><img src="https://circleci.com/gh/datacentred/datacentred-api-ruby.svg?style=svg&amp;circle-token=c284db6421742dcfe8c50f52945c31d9b976effb" alt="CircleCI"></a>
+<a href="http://badge.fury.io/rb/keybase-core"><img src="https://badge.fury.io/rb/datacentred.png" alt="Gem Version"></a></p>
+
+<h1>TO DO BEFORE RELEASE</h1>
+
+<ul>
+<li>[x] Remove sensitive data from history</li>
+<li>[x] A better way to convert timestamps to <code>Time</code> objects</li>
+<li>[x] Set up license</li>
+<li>[x] Set up Code of Conduct and Contributing instructions</li>
+<li>[x] Code review</li>
+<li>[ ] Doc review</li>
+</ul>
+
+<h1>Installation</h1>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='id identifier rubyid_install'>install</span> <span class='id identifier rubyid_datacentred'>datacentred</span>
+</code></pre>
+
+<p>or</p>
+
+<p>(in Gemfile or .gemspec)</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>datacentred</span><span class='tstring_end'>&#39;</span></span>
+</code></pre>
+
+<p>then</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>datacentred</span><span class='tstring_end'>&#39;</span></span>
+</code></pre>
+
+<h1>Usage</h1>
+
+<p>This API allows you to automate operations against your DataCentred account.</p>
+
+<p>Operations include:</p>
+
+<ul>
+<li>Creating and managing users;</li>
+<li>Creating and managing roles for users;</li>
+<li>Managing OpenStack Project creation, quota adjustments, and user assignments;</li>
+<li>Viewing detailed usage/billing information for your account.</li>
+</ul>
+
+<h2>Authentication</h2>
+
+<p>The API uses two pieces of information to authenticate access.</p>
+
+<p>A unique access key specific to your DataCentred account, and a secret key which is generated once.</p>
+
+<p>To get started:</p>
+
+<ol>
+<li>Find your API access key and secret key at <a href="https://my.datacentred.io">my.datacentred.io</a></li>
+</ol>
+
+<p><img src="https://user-images.githubusercontent.com/98526/30334767-79f4617c-97d8-11e7-962c-ec3115d13896.png" alt="API Credentials"></p>
+
+<ol>
+<li>Set your credentials by exporting your access key and secret key as environment variables:</li>
+</ol>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_export'>export</span> <span class='const'>DATACENTRED_ACCESS</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>my_access</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_export'>export</span> <span class='const'>DATACENTRED_SECRET</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>my_secret</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<p>Or setting your keys manually using the following methods:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="Datacentred.html" title="Datacentred (module)">Datacentred</a></span></span><span class='period'>.</span><span class='id identifier rubyid_access_key'><span class='object_link'><a href="Datacentred.html#access_key-class_method" title="Datacentred.access_key (method)">access_key</a></span></span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my_access</span><span class='tstring_end'>&#39;</span></span>
+<span class='const'><span class='object_link'><a href="Datacentred.html" title="Datacentred (module)">Datacentred</a></span></span><span class='period'>.</span><span class='id identifier rubyid_secret_key'><span class='object_link'><a href="Datacentred.html#secret_key-class_method" title="Datacentred.secret_key (method)">secret_key</a></span></span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my_secret</span><span class='tstring_end'>&#39;</span></span>
+</code></pre>
+
+<p>NOTE: If you use this approach, the gem will ignore any values assigned to the environment variables.</p>
+
+<h2>Usage Examples</h2>
+
+<p>The <code>User</code>, <code>Project</code>, and <code>Role</code> entities all support CRUD operations via the following methods:</p>
+
+<ul>
+<li><code>.all</code> - returns an index of all entities of this type.</li>
+<li><code>.create params</code> - creates a new entity where <code>params</code> is a hash of properties.</li>
+<li><code>.update id, params</code> - updates the entity identified by <code>id</code> with the hash of properties defined by <code>params</code>.</li>
+<li><code>.find id</code> - finds the entity via the unique identifier <code>id</code>.</li>
+<li><code>.destroy id</code> - removes the entity via the unique identifier <code>id</code>.</li>
+</ul>
+
+<p>Here are some worked examples:</p>
+
+<h3>List all available users</h3>
+
+<pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="Datacentred.html" title="Datacentred (module)">Datacentred</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Datacentred/User.html" title="Datacentred::User (class)">User</a></span></span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span>
+<span class='comment'># =&gt; [#&lt;Datacentred::Model::User id=&quot;2bd21ee25cde40fdb9454954e4fbb4b5&quot;, ...&gt;, ...]
+</span></code></pre>
+
+<h3>Find a user by id</h3>
+
+<pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="Datacentred.html" title="Datacentred (module)">Datacentred</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Datacentred/User.html" title="Datacentred::User (class)">User</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>2bd21ee25cde40fdb9454954e4fbb4b5</span><span class='tstring_end'>&quot;</span></span>
+<span class='comment'># =&gt; #&lt;Datacentred::Model::User id=&quot;2bd21ee25cde40fdb9454954e4fbb4b5&quot;, ...&gt;
+</span></code></pre>
+
+<h3>Update a project</h3>
+
+<pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="Datacentred.html" title="Datacentred (module)">Datacentred</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Datacentred/Project.html" title="Datacentred::Project (class)">Project</a></span></span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>6d5277716c4b10d2177814af50b77175</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Foo</span><span class='tstring_end'>&quot;</span></span>
+<span class='comment'># =&gt; #&lt;Datacentred::Model::Project id=&quot;6d5277716c4b10d2177814af50b77175&quot;, name= &quot;Foo&quot;, ...&gt;
+</span></code></pre>
+
+<h3>Create a role</h3>
+
+<p>Acceptable permissions are: &#39;api.read&#39;, &#39;cloud.read&#39;, &#39;roles.modify&#39;, &#39;roles.read&#39;, &#39;storage.read&#39;, &#39;tickets.modify&#39;, &#39;usage.read&#39;.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="Datacentred.html" title="Datacentred (module)">Datacentred</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Datacentred/Role.html" title="Datacentred::Role (class)">Role</a></span></span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span> <span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>foo</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>permissions:</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>usage.read</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<span class='comment'># =&gt; #&lt;Datacentred::Model::Role id=&quot;654f423e-646a-4742-849d-d8c9ab9b4f39&quot;, name=&quot;foo&quot;, admin=false, permissions=[&quot;usage.read&quot;] ...&gt;
+</span></code></pre>
+
+<h3>Add a user to a role</h3>
+
+<pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="Datacentred.html" title="Datacentred (module)">Datacentred</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Datacentred/Role.html" title="Datacentred::Role (class)">Role</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_user'>add_user</span> <span class='label'>role_id:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>654f423e-646a-4742-849d-d8c9ab9b4f39</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>user_id:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>2bd21ee25cde40fdb9454954e4fbb4b5</span><span class='tstring_end'>&quot;</span></span>
+<span class='comment'># =&gt; true
+</span></code></pre>
+
+<h3>Remove a user from a project</h3>
+
+<pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="Datacentred.html" title="Datacentred (module)">Datacentred</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Datacentred/Project.html" title="Datacentred::Project (class)">Project</a></span></span><span class='period'>.</span><span class='id identifier rubyid_remove_user'>remove_user</span> <span class='label'>project_id:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>6d5277716c4b10d2177814af50b77175</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>user_id:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>2bd21ee25cde40fdb9454954e4fbb4b5</span><span class='tstring_end'>&quot;</span></span>
+<span class='comment'># =&gt; true
+</span></code></pre>
+
+<h3>Get usage data for a given year and month</h3>
+
+<p>Usage data is returned simply by supplying a year and a month. If the year/month are current then the data will be as recent as the time contained within the <code>last_updated_at</code> property.</p>
+
+<pre class="code ruby"><code class="ruby">@usage = Datacentred::Usage.find 2017, 6
+# =&gt; #&lt;Datacentred::Model::Usage last_updated_at=2017-07-12 09:46:54 UTC, projects=[{:id=&gt;&quot;37033518a4514f12adeb8346ac3f188c&quot;
+@usage.projects.first.name
+# =&gt; &quot;wyld_stallyns&quot;
+@usage.projects.first.usage.instances.first.current_flavor.name
+=&gt; &quot;dc1.1x1&quot;
+</code></pre>
+
+<h2>Schemas</h2>
+
+<p>There are JSON schemas available for each entity in the gem:</p>
+
+<ul>
+<li>Projects: <a href="https://my.datacentred.io/api/schemas/project">https://my.datacentred.io/api/schemas/project</a></li>
+<li>Roles: <a href="https://my.datacentred.io/api/schemas/role">https://my.datacentred.io/api/schemas/role</a></li>
+<li>Usage: <a href="https://my.datacentred.io/api/schemas/usage">https://my.datacentred.io/api/schemas/usage</a></li>
+<li>User: <a href="https://my.datacentred.io/api/schemas/user">https://my.datacentred.io/api/schemas/user</a></li>
+</ul>
+
+<h2>Errors</h2>
+
+<p>The gem may raise the following standard errors:</p>
+
+<ul>
+<li><code>Unauthorized</code> - Your credentials are incorrect or your account isn&#39;t authorized for API access.</li>
+<li><code>NotFound</code> - The entity you referred to can&#39;t be found with the ID you supplied.</li>
+<li><code>UnprocessableEntity</code> - There was a validation issue with your request (only applies to create/delete/update operations)</li>
+</ul>
+
+<h2>Documentation</h2>
+
+<p>Full documentation is also available via <a href="https://datacentred.github.io/datacentred-api-ruby/">https://datacentred.github.io/datacentred-api-ruby/</a></p>
+
+<h2>API Reference Manual</h2>
+
+<p>Please check out the <a href="https://my.datacentred.io/api/docs/v1">DataCentred API Documentation</a> for a comprehensive description of the API itself.</p>
+</div></div>
+
+      <div id="footer">
+  Generated on Fri Sep 15 15:45:21 2017 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.9 (ruby-2.3.1).
+</div>
+
+    </div>
+  </body>
+</html>

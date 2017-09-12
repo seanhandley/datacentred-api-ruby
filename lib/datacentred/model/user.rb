@@ -1,65 +1,63 @@
 module Datacentred
   module Model
-    class User < OpenStruct
-      def initialize(params)
-        params.delete("links")
-        params["created_at"] = Time.parse params["created_at"]
-        params["updated_at"] = Time.parse params["updated_at"]
-        super(params)
-      end
+    # A user on your DataCentred account.
+    #
+    # Users are team members with the ability to log into your DataCentred account.
+    #
+    # All users created in your DataCented account are backed by a corresponding user in OpenStack's identity service (Keystone).
+    class User < Base
+      class << self
+        # Create a new user.
+        #
+        # @param [Hash] params User attributes.
+        # @raise [Errors::UnprocessableEntity] Raised if validations fail for the supplied attributes.
+        # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
+        # @return [User] New user.
+        def create(params)
+          new Request::Users.create params
+        end
 
-      # Create a new user
-      #
-      # Create a new DataCentred user (backed by OpenStack).
-      #
-      # @param [Hash] user user information
-      # @raise [Datacentred::UnprocessableEntity] if password is not provided
-      def self.create(params)
-        new Request::Users.create(params)
-      end
+        # List all available users.
+        #
+        # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
+        # @return [[User]] A collection of all users on this account.
+        def all
+          Request::Users.list.map {|user| new user }
+        end
 
-      # List all available users
-      #
-      # Show a list of all the users.
-      #
-      # @param [Hash] user user information
-      def self.all
-        Request::Users.list.map { |user| new(user) }
-      end
+        # Find a user by unique ID.
+        #
+        # @param [String] id The unique identifier for this user.
+        # @raise [Errors::NotFound] Raised if the user couldn't be found.
+        # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
+        # @return [User] The user, if it exists.
+        def find(id)
+          new Request::Users.show id
+        end
 
-      # Show a user
-      #
-      # Show the specified user
-      #
-      # @param [String] id the unique identifier for this user
-      # @raise [Datacentred::NotFoundError] if user couldn't be found
-      # @return [Datacentred::Model::User] the user, if it exists
-      def self.find(id)
-        new Request::Users.show(id)
-      end
+        # Update a user by unique ID.
+        #
+        # @param [String] id The unique identifier for this user.
+        # @param [Hash] params User attributes.
+        # @raise [Errors::UnprocessableEntity] Raised if validations fail for the supplied attributes.
+        # @raise [Errors::NotFound] Raised if the user couldn't be found.
+        # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
+        # @return [User] The updated user.
+        def update(id, params)
+          new Request::Users.update id, params
+        end
 
-      # Update a user
-      #
-      # Update the specified user.
-      #
-      # @param [String] id the unique identifier for this user
-      # @param [Hash] user user information
-      # @raise [Datacentred::UnprocessableEntity] if user name is already in use
-      # @raise [Datacentred::NotFoundError] if user couldn't be found
-      # @return [Datacentred::Model::User] updated user
-      def self.update(id, params)
-        new Request::Users.update(id, params)
-      end
-
-      # Delete a user
-      #
-      # Permanently remove the specified user.
-      #
-      # @param [String] id the unique identifier for this user
-      # @raise [Datacentred::NotFoundError] if user couldn't be found
-      # @raise [Datacentred::UnprocessableEntity] if try to delete current user
-      def self.delete(id)
-        Request::Users.destroy(id)
+        # Permanently remove the specified user.
+        #
+        # @param [String] id The unique identifier for this user.
+        # @raise [Errors::NotFound] Raised if the user couldn't be found.
+        # @raise [Errors::UnprocessableEntity] Raised if validations fail for the specified user.
+        # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
+        # @return [Boolean] Confirms the user was destroyed.
+        def destroy(id)
+          Request::Users.destroy id
+          true
+        end
       end
     end
   end

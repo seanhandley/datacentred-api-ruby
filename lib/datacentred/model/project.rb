@@ -1,97 +1,102 @@
 module Datacentred
   module Model
-    class Project < OpenStruct
-      def initialize(params)
-        params.delete("links") if params
-        params["created_at"] = Time.parse params["created_at"]
-        params["updated_at"] = Time.parse params["updated_at"]
-        super(params)
-      end
+    # A project on your DataCentred account.
+    #
+    # Projects (also called "Cloud Projects" or "Tenants") are a way of grouping together users and resources.
+    #
+    # All projects created in your DataCented account are backed by a corresponding project in OpenStack's identity service (Keystone).
+    #
+    # @attr [String] id
+    # @attr [String] name
+    # @attr [Hash] quota_set
+    # @attr_reader [Time] created_at
+    # @attr_reader [Time] updated_at
+    class Project < Base
+      class << self
+        # Create a new project.
+        #
+        # @param [Hash] params Project attributes
+        # @raise [Errors::UnprocessableEntity] Raised if validations fail for the supplied attributes.
+        # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
+        # @return [Project] New project.
+        def create(params)
+          new Request::Projects.create params
+        end
 
-      # Create a new project
-      #
-      # Create a new DataCentred cloud project (backed by OpenStack).
-      #
-      # @param [Hash] project project information
-      # @raise [Datacentred::UnprocessableEntity] if project name is already in use
-      def self.create(params)
-        new Request::Projects.create(params)
-      end
+        # List all available projects.
+        #
+        # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
+        # @return [[Project]] A collection of all projects on this account.
+        def all
+          Request::Projects.list.map{|project| new project }
+        end
 
-      # List all available projects
-      #
-      # Show a list of all the projects.
-      #
-      # @return [[Datacentred::Model::Project]] a collection of all projects
-      def self.all
-        Request::Projects.list.map{ |project| new(project) }
-      end
+        # Find a project by unique ID.
+        #
+        # @param [String] id The unique identifier for this project.
+        # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
+        # @raise [Errors::NotFound] Raised if the project couldn't be found.
+        # @return [Project] The project, if it exists.
+        def find(id)
+          new Request::Projects.show id
+        end
 
-      # Show a project
-      #
-      # Show the specified project
-      #
-      # @param [String] id the unique identifier for this project
-      # @raise [Datacentred::NotFoundError] if project couldn't be found
-      # @return [Datacentred::Model::Project] the project, if it exists
-      def self.find(id)
-        new Request::Projects.show(id)
-      end
+        # Update a project by unique ID.
+        #
+        # @param [String] id The unique identifier for this project.
+        # @param [Hash] params Project attributes.
+        # @raise [Errors::UnprocessableEntity] Raised if validations fail for the supplied attributes.
+        # @raise [Errors::NotFound] Raised if the project could not be found.
+        # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
+        # @return [Project] The updated project.
+        def update(id, params)
+          new Request::Projects.update id, params
+        end
 
-      # Update a project
-      #
-      # Update the specified project
-      #
-      # @param [String] id the unique identifier for this project
-      # @param [Hash] project project information
-      # @raise [Datacentred::UnprocessableEntity] if project name is already in use
-      # @raise [Datacentred::NotFoundError] if project couldn't be found
-      # @return [Datacentred::Model::Project] updated project
-      def self.update(id, params)
-        new Request::Projects.update(id, params)
-      end
+        # Permanently remove the specified project.
+        #
+        # @param [String] id The unique identifier for this project.
+        # @raise [Errors::NotFound] Raised if the project couldn't be found.
+        # @raise [Errors::UnprocessableEntity] Raised if validations fail for the specified project.
+        # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
+        # @return [Boolean] Confirms the user was destroyed.
+        def destroy(id)
+          Request::Projects.destroy id
+          true
+        end
 
-      # Delete a project
-      #
-      # Permanently remove the specified project.
-      #
-      # @param [String] id the unique identifier for this project
-      # @raise [Datacentred::NotFoundError] if project couldn't be found
-      # @raise [Datacentred::UnprocessableEntity] if project doesn't exist
-      def self.delete(id)
-        Request::Projects.destroy(id)
-      end
+        # List all users assigned to this project.
+        #
+        # @param [String] id The unique identifier for this project.
+        # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
+        # @return [[User]] A collection of the project's users.
+        def users(id)
+          Request::Projects.list_users(id).map{|user| new user }
+        end
 
-      # List all members of this project
-      #
-      # Show a list of all the members assigned to this project.
-      #
-      # @param [String] id the unique identifier for this project
-      # @return [Datacentred::Model::User] a collection of the project's members
-      def self.users(id)
-        Request::Projects.list_users(id).map{ |user| new(user) }
-      end
+        # Add a new user to this project, giving them access to it via OpenStack.
+        #
+        # @param [String] project_id The unique identifier for this project.
+        # @param [String] user_id The unique identifier for this user.
+        # @raise [Errors::NotFound] Raised if the project or user couldn't be found.
+        # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
+        # @return [Boolean] Confirms the user was added (or is already present).
+        def add_user(project_id:, user_id:)
+          Request::Projects.add_user project_id, user_id
+          true
+        end
 
-      # Add new member to this project
-      #
-      # Add a new member (user) to this project, giving them access to it via OpenStack.
-      #
-      # @param [String] project_id the unique identifier for this project
-      # @param [String] user_id the unique identifier for this user
-      # @raise [Datacentred::NotFoundError] if project or user couldn't be found
-      def self.add_user(project_id, user_id)
-        Request::Projects.add_user(project_id, user_id)
-      end
-
-      # Remove member from this project
-      #
-      # Remove member (user) from this project, revoking their access to it on OpenStack.
-      #
-      # @param [String] project_id the unique identifier for this project
-      # @param [String] user_id the unique identifier for this user
-      # @raise [Datacentred::NotFoundError] if project or user couldn't be found
-      def self.remove_user(project_id, user_id)
-        Request::Projects.remove_user(project_id, user_id)
+        # Remove user from this project, revoking their access to it on OpenStack.
+        #
+        # @param [String] project_id The unique identifier for this project.
+        # @param [String] user_id The unique identifier for this user.
+        # @raise [Errors::NotFound] Raised if project or user couldn't be found.
+        # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
+        # @return [Boolean] Confirms that user was removed (or is already absent).
+        def remove_user(project_id:, user_id:)
+          Request::Projects.remove_user project_id, user_id
+          true
+        end
       end
     end
   end

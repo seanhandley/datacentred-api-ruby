@@ -1,46 +1,83 @@
 module Datacentred
   module Request
-    API_BASE_URL = 'https://my.datacentred.io'
-
+    # Base class for all API requests.
+    #
+    # Uses the Faraday library for HTTP interactions.
     class Base
+      class << self
+        # Access a resource via HTTP GET.
+        #
+        # @param [String] path Desired server path.
+        # @raise [Errors::Error] Raised if the server returns a non 2xx error code.
+        # @return [Object] Parsed server response body.
+        def get(path)
+          action :get, path
+        end
 
-      def self.get(url, payload=nil)
-        response = Datacentred::Response.new(conn.get(url, payload))
-        response.body
-      end
+        # Access a resource via HTTP POST.
+        #
+        # @param [String] path Desired server path.
+        # @param [Object] payload JSON serializable object.
+        # @raise [Errors::Error] Raised if the server returns a non 2xx error code.
+        # @return [Object] Parsed server response body.
+        def post(path, payload=nil)
+          action :post, path, payload
+        end
 
-      def self.post(url, payload=nil)
-        response = Datacentred::Response.new(conn.post(url, payload))
-        response.body
-      end
+        # Access a resource via HTTP PUT.
+        #
+        # @param [String] path Desired server path.
+        # @param [Object] payload JSON serializable object.
+        # @raise [Errors::Error] Raised if the server returns a non 2xx error code.
+        # @return [Object] Parsed server response body.
+        def put(path, payload=nil)
+          action :put, path, payload
+        end
 
-      def self.put(url, payload=nil)
-        response = Datacentred::Response.new(conn.put(url, payload))
-        response.body
-      end
+        # Access a resource via HTTP DELETE.
+        #
+        # @param [String] path Desired server path.
+        # @raise [Errors::Error] Raised if the server returns a non 2xx error code.
+        # @return [nil] Returns nil on success.
+        def delete(path)
+          action :delete, path
+        end
 
-      def self.delete(url, payload=nil)
-        response = Datacentred::Response.new(conn.delete(url, payload))
-        response.body
-      end
+        private
 
-      private
+        def action(verb, path, payload=nil)
+          params = [path, payload&.to_json].compact
+          response = Datacentred::Response.new connection.send verb, *params
+          response.body
+        end
 
-      def self.conn
-        Faraday.new(:url => API_BASE_URL) do |faraday|
-          faraday.path_prefix = "/api/"
-          faraday.request  :url_encoded
-          faraday.headers['Accept'] = "application/vnd.datacentred.api+json; version=1"
-          faraday.headers['Authorization'] = "Token token=#{credentials}"
-          faraday.headers['Content-Type'] = 'application/json'
-          faraday.adapter  Faraday.default_adapter
+        def connection
+          Faraday.new(url: base_url) do |faraday|
+            faraday.request :url_encoded
+            faraday.adapter Faraday.default_adapter
+            faraday.headers['Accept']        = "#{accept_type}; version=#{api_version}"
+            faraday.headers['Authorization'] = "Token token=#{credentials}"
+            faraday.headers['Content-Type']  = "application/json"
+            faraday.path_prefix              = "/api/"
+          end
+        end
+
+        def accept_type
+          "application/vnd.datacentred.api+json"
+        end
+
+        def api_version
+          "1".freeze
+        end
+
+        def base_url
+          "https://my.datacentred.io"
+        end
+
+        def credentials
+          [Datacentred.access_key, Datacentred.secret_key].join ":"
         end
       end
-
-      def self.credentials
-        "#{Datacentred.access_key}:#{Datacentred.secret_key}"
-      end
-
     end
   end
 end

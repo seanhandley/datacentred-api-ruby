@@ -1,19 +1,21 @@
 module Datacentred
   module Model
-    class Usage < OpenStruct
-      def initialize(params)
-        params.delete("links")
-        # params["last_updated_at"] = Time.parse params["last_updated_at"]
-        super(params)
-      end
-      # Get usage data
+    # Usage data for a given month/year.
+    #
+    # Data is updated every few hours for the current month.
+    #
+    # @attr [Time] last_updated_at
+    # @attr [[Hash]] projects
+    class Usage < Base
+      # Retrieve account usage data for a given year/month.
       #
-      # @param [Integer] year the year
-      # @param [Integer] month the month
-      # @raise [Datacentred::NotFoundError] if no usage data found for given year/month pair
-      # @return [Datacentred::Model::Usage] usage for given year/month pair
-      def self.show(year, month)
-        Request::Usage.show(year, month)["projects"].map{ |project| new(project) }
+      # @param [Integer] year The year.
+      # @param [Integer] month The month.
+      # @raise [Errors::NotFound] Raised if no usage data found for given year/month pair.
+      # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
+      # @return [Usage] Usage for given year/month pair.
+      def self.find(year, month)
+        new Request::Usage.show year, month
       end
     end
   end

@@ -2,9 +2,8 @@
 .bundle
 .config
 pkg
-
-# YARD artifacts
+doc
+coverage
 .yardoc
 _yardoc
-doc/
 .DS_Store
