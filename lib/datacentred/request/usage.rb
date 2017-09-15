@@ -8,7 +8,8 @@ module Datacentred
       #
       # @param [Integer] year The year.
       # @param [Integer] month The month.
-      # @raise [Errors::NotFound] Raised if no usage data found for given year/month pair.
+      # @raise [Errors::NotFound] Raised if no usage data found for
+      #   given year/month pair.
       # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
       # @return [Hash] Usage for given year/month pair.
       def self.show(year, month)

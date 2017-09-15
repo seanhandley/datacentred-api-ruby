@@ -2,9 +2,11 @@ module Datacentred
   module Model
     # A project on your DataCentred account.
     #
-    # Projects (also called "Cloud Projects" or "Tenants") are a way of grouping together users and resources.
+    # Projects (also called "Cloud Projects" or "Tenants") are a way
+    # of grouping together users and resources.
     #
-    # All projects created in your DataCented account are backed by a corresponding project in OpenStack's identity service (Keystone).
+    # All projects created in your DataCented account are backed by
+    # a corresponding project in OpenStack's identity service (Keystone).
     #
     # @attr [String] id
     # @attr [String] name
@@ -16,7 +18,8 @@ module Datacentred
         # Create a new project.
         #
         # @param [Hash] params Project attributes
-        # @raise [Errors::UnprocessableEntity] Raised if validations fail for the supplied attributes.
+        # @raise [Errors::UnprocessableEntity] Raised if validations fail
+        #   for the supplied attributes.
         # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
         # @return [Project] New project.
         def create(params)
@@ -25,10 +28,10 @@ module Datacentred
 
         # List all available projects.
         #
-        # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
+        # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
         # @return [[Project]] A collection of all projects on this account.
         def all
-          Request::Projects.list.map{|project| new project }
+          Request::Projects.list.map { |project| new project }
         end
 
         # Find a project by unique ID.
@@ -45,7 +48,8 @@ module Datacentred
         #
         # @param [String] id The unique identifier for this project.
         # @param [Hash] params Project attributes.
-        # @raise [Errors::UnprocessableEntity] Raised if validations fail for the supplied attributes.
+        # @raise [Errors::UnprocessableEntity] Raised if validations fail
+        #   for the supplied attributes.
         # @raise [Errors::NotFound] Raised if the project could not be found.
         # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
         # @return [Project] The updated project.
@@ -57,7 +61,8 @@ module Datacentred
         #
         # @param [String] id The unique identifier for this project.
         # @raise [Errors::NotFound] Raised if the project couldn't be found.
-        # @raise [Errors::UnprocessableEntity] Raised if validations fail for the specified project.
+        # @raise [Errors::UnprocessableEntity] Raised if validations fail
+        #   for the specified project.
         # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
         # @return [Boolean] Confirms the user was destroyed.
         def destroy(id)
@@ -71,7 +76,7 @@ module Datacentred
         # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
         # @return [[User]] A collection of the project's users.
         def users(id)
-          Request::Projects.list_users(id).map{|user| new user }
+          Request::Projects.list_users(id).map { |user| new user }
         end
 
         # Add a new user to this project, giving them access to it via OpenStack.

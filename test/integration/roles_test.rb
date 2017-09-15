@@ -7,7 +7,7 @@ module Datacentred
       @create_params2      = {name: "Historical Figures",
                               permissions: ["usage.read","tickets.modify"]}
       @new_permissions     = {permissions: ['usage.read',
-                              'roles.modify', 'roles.read']}
+                                            'roles.modify', 'roles.read']}
       @invalid_permissions = {name: "Genghis Khan",
                               permissions: ["fighting"]}
       @update_params       = {name: "Administrator 2"}

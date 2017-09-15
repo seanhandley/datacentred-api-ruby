@@ -24,13 +24,15 @@ module Datacentred
 
   # Access key credential for the DataCentred API.
   #
-  # This value is automatically loaded from the *DATACENTRED_ACCESS* environment variable.
+  # This value is automatically loaded from the *DATACENTRED_ACCESS*
+  # environment variable.
   #
-  # You can find your API credentials by logging into the dashboard at https://my.datacentred.io
+  # You can find your API credentials by logging into the dashboard at
+  # https://my.datacentred.io
   #
   # @return [String] API access key credential
   def self.access_key
-    @@access_key ||= ENV['DATACENTRED_ACCESS']
+    @access_key ||= ENV['DATACENTRED_ACCESS']
   end
 
   # Set a new access key value.
@@ -40,18 +42,20 @@ module Datacentred
   # @param [String] new_access_key New access key value
   # @return [String] API access key credential
   def self.access_key=(new_access_key)
-    @@access_key = new_access_key
+    @access_key = new_access_key
   end
 
   # Secret key credential for the DataCentred API.
   #
-  # This value is automatically loaded from the *DATACENTRED_SECRET* environment variable.
+  # This value is automatically loaded from the *DATACENTRED_SECRET*
+  # environment variable.
   #
-  # You can find your API credentials by logging into the dashboard at https://my.datacentred.io
+  # You can find your API credentials by logging into the dashboard
+  # at https://my.datacentred.io
   #
   # @return [String] API secret key credential
   def self.secret_key
-    @@secret_key ||= ENV['DATACENTRED_SECRET']
+    @secret_key ||= ENV['DATACENTRED_SECRET']
   end
 
   # Set a new secret key value.
@@ -62,7 +66,7 @@ module Datacentred
   #
   # @return [String] API secret key credential
   def self.secret_key=(new_secret_key)
-    @@secret_key = new_secret_key
+    @secret_key = new_secret_key
   end
 
   # Shorthand alias for {Model::Project}
@@ -86,7 +90,7 @@ module Datacentred
   class Version < Model::Version; end
 
   # Model classes representing RESTful API entities.
-  module Model ; end
+  module Model; end
 
   # Request classes representing RESTful API interactions.
   module Request

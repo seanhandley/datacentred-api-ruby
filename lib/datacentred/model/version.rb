@@ -16,7 +16,7 @@ module Datacentred
       #
       # @return [[Version]] Currently available versions of the API.
       def self.all
-        Request::Versions.list.map {|version| new version }
+        Request::Versions.list.map { |version| new version }
       end
     end
   end

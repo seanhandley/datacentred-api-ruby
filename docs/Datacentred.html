@@ -280,15 +280,15 @@ href="https://my.datacentred.io">my.datacentred.io</a></p>
       <pre class="lines">
 
 
-32
-33
-34</pre>
+34
+35
+36</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred.rb', line 32</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred.rb', line 34</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_access_key'>access_key</span>
-  <span class='cvar'>@@access_key</span> <span class='op'>||=</span> <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>DATACENTRED_ACCESS</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+  <span class='ivar'>@access_key</span> <span class='op'>||=</span> <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>DATACENTRED_ACCESS</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -361,15 +361,15 @@ href="https://my.datacentred.io">my.datacentred.io</a></p>
       <pre class="lines">
 
 
-42
-43
-44</pre>
+44
+45
+46</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred.rb', line 42</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred.rb', line 44</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_access_key='>access_key=</span><span class='lparen'>(</span><span class='id identifier rubyid_new_access_key'>new_access_key</span><span class='rparen'>)</span>
-  <span class='cvar'>@@access_key</span> <span class='op'>=</span> <span class='id identifier rubyid_new_access_key'>new_access_key</span>
+  <span class='ivar'>@access_key</span> <span class='op'>=</span> <span class='id identifier rubyid_new_access_key'>new_access_key</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -426,15 +426,15 @@ href="https://my.datacentred.io">my.datacentred.io</a></p>
       <pre class="lines">
 
 
-53
-54
-55</pre>
+57
+58
+59</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred.rb', line 53</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred.rb', line 57</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_secret_key'>secret_key</span>
-  <span class='cvar'>@@secret_key</span> <span class='op'>||=</span> <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>DATACENTRED_SECRET</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+  <span class='ivar'>@secret_key</span> <span class='op'>||=</span> <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>DATACENTRED_SECRET</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -507,15 +507,15 @@ href="https://my.datacentred.io">my.datacentred.io</a></p>
       <pre class="lines">
 
 
-64
-65
-66</pre>
+68
+69
+70</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred.rb', line 64</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred.rb', line 68</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_secret_key='>secret_key=</span><span class='lparen'>(</span><span class='id identifier rubyid_new_secret_key'>new_secret_key</span><span class='rparen'>)</span>
-  <span class='cvar'>@@secret_key</span> <span class='op'>=</span> <span class='id identifier rubyid_new_secret_key'>new_secret_key</span>
+  <span class='ivar'>@secret_key</span> <span class='op'>=</span> <span class='id identifier rubyid_new_secret_key'>new_secret_key</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -527,7 +527,7 @@ href="https://my.datacentred.io">my.datacentred.io</a></p>
 </div>
 
       <div id="footer">
-  Generated on Fri Sep 15 16:27:42 2017 by
+  Generated on Fri Sep 15 19:34:57 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.3.1).
 </div>

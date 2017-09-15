@@ -2,7 +2,8 @@ module Datacentred
   module Model
     # A role on your DataCentred account.
     #
-    # Roles allow simple setup of user permissions via the creation of roles, then assigning those roles to users.
+    # Roles allow simple setup of user permissions via the creation of roles,
+    # then assigning those roles to users.
     #
     # @attr [String] id
     # @attr [String] name
@@ -15,7 +16,8 @@ module Datacentred
         # Create a new role.
         #
         # @param [Hash] params Role attributes.
-        # @raise [Errors::UnprocessableEntity] Raised if validations fail for the supplied attributes.
+        # @raise [Errors::UnprocessableEntity] Raised if validations fail
+        #   for the supplied attributes.
         # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
         # @return [Role] New role.
         def create(params)
@@ -27,7 +29,7 @@ module Datacentred
         # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
         # @return [[Role]] A collection of all roles on this account.
         def all
-          Request::Roles.list.map{|role| new role }
+          Request::Roles.list.map { |role| new role }
         end
 
         # Find a role by unique ID.
@@ -44,7 +46,8 @@ module Datacentred
         #
         # @param [String] id The unique identifier for this role.
         # @param [Hash] params Role attributes.
-        # @raise [Errors::UnprocessableEntity] Raised if validations fail for the supplied attributes.
+        # @raise [Errors::UnprocessableEntity] Raised if validations fail
+        #   for the supplied attributes.
         # @raise [Errors::NotFound] Raised if the role doesn't exist.
         # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
         # @return [Role] The updated role.
@@ -56,7 +59,8 @@ module Datacentred
         #
         # @param [String] id The unique identifier for this role.
         # @raise [Errors::NotFound] Raised if the role couldn't be found.
-        # @raise [Errors::UnprocessableEntity] Raised if validations fail for the specifed role.
+        # @raise [Errors::UnprocessableEntity] Raised if validations fail
+        #   for the specifed role.
         # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
         # @return [Boolean] Confirms the role was destroyed.
         def destroy(id)
@@ -70,7 +74,7 @@ module Datacentred
         # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
         # @return [[User]] A collection of the role's users.
         def users(id)
-          Request::Roles.list_users(id).map{|user| new user }
+          Request::Roles.list_users(id).map { |user| new user }
         end
 
         # Add new user to this role, giving them the associated permissions.

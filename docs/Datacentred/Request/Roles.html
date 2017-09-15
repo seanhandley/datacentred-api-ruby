@@ -453,12 +453,12 @@
       <pre class="lines">
 
 
-87
-88
-89</pre>
+90
+91
+92</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred/request/roles.rb', line 87</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/request/roles.rb', line 90</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_user'>add_user</span><span class='lparen'>(</span><span class='id identifier rubyid_role_id'>role_id</span><span class='comma'>,</span> <span class='id identifier rubyid_user_id'>user_id</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_put'>put</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>roles/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_role_id'>role_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>/users/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_user_id'>user_id</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -566,12 +566,12 @@
       <pre class="lines">
 
 
-14
 15
-16</pre>
+16
+17</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred/request/roles.rb', line 14</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/request/roles.rb', line 15</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>roles</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>role</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>role</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
@@ -693,12 +693,12 @@
       <pre class="lines">
 
 
-63
-64
-65</pre>
+66
+67
+68</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred/request/roles.rb', line 63</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/request/roles.rb', line 66</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_destroy'>destroy</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>roles/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_id'>id</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -772,12 +772,12 @@
       <pre class="lines">
 
 
-24
 25
-26</pre>
+26
+27</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred/request/roles.rb', line 24</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/request/roles.rb', line 25</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_list'>list</span>
   <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>roles</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>roles</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
@@ -871,12 +871,12 @@
       <pre class="lines">
 
 
-74
-75
-76</pre>
+77
+78
+79</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred/request/roles.rb', line 74</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/request/roles.rb', line 77</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_list_users'>list_users</span><span class='lparen'>(</span><span class='id identifier rubyid_role_id'>role_id</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>roles/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_role_id'>role_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>/users</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>users</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
@@ -1000,12 +1000,12 @@
       <pre class="lines">
 
 
-100
-101
-102</pre>
+103
+104
+105</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred/request/roles.rb', line 100</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/request/roles.rb', line 103</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_remove_user'>remove_user</span><span class='lparen'>(</span><span class='id identifier rubyid_role_id'>role_id</span><span class='comma'>,</span> <span class='id identifier rubyid_user_id'>user_id</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>roles/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_role_id'>role_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>/users/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_user_id'>user_id</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -1113,12 +1113,12 @@
       <pre class="lines">
 
 
-36
 37
-38</pre>
+38
+39</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred/request/roles.rb', line 36</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/request/roles.rb', line 37</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show'>show</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>roles/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_id'>id</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>role</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
@@ -1256,12 +1256,12 @@
       <pre class="lines">
 
 
-50
-51
-52</pre>
+52
+53
+54</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred/request/roles.rb', line 50</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/request/roles.rb', line 52</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_put'>put</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>roles/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_id'>id</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>role</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>role</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
@@ -1276,7 +1276,7 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Sep 15 16:27:43 2017 by
+  Generated on Fri Sep 15 19:34:58 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.3.1).
 </div>

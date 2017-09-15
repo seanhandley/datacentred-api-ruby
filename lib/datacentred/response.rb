@@ -8,7 +8,11 @@ module Datacentred
     # @param [Faraday::Response] server_response A response object returned from Faraday.
     # @raise [Errors::Error] Raised if response isn't a 2xx status code.
     def initialize(server_response)
-      @body = JSON.parse server_response.body rescue nil
+      begin
+        @body = JSON.parse server_response.body
+      rescue JSON::ParserError
+        @body = nil
+      end
       @status = server_response.status
       Errors.raise_unless_successful(status, @body)
     end

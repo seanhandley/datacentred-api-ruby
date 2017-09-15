@@ -4,7 +4,7 @@ Gem::Specification.new do |gem|
   gem.date        = '2017-09-14'
   gem.summary     = 'datacentred'
   gem.description = 'Ruby client library for automating DataCentred account management.'
-  gem.authors     = [ 'Eugenia Grieff', 'Sean Handley' ]
+  gem.authors     = ['Eugenia Grieff', 'Sean Handley']
   gem.email       = 'megrieff@gmail.com'
   gem.files       = `git ls-files`.split("\n")
   gem.homepage    = 'https://github.com/datacentred/datacentred-api-ruby'

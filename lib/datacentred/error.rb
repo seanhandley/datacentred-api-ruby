@@ -6,18 +6,15 @@ module Datacentred
     # @raise [Error] Appropriate error for server response code.
     # @return [nil] Returns nil on success
     def self.raise_unless_successful(status, body)
-      return if status.to_s.start_with? "2" # 2xx
+      return if status.to_s.start_with? '2' # 2xx
       err = errors[status]
-      message = body&.fetch("errors")&.first&.fetch("detail")
-      if err
-        raise err, message || status.to_s
-      else
-        raise Error, "Error #{status}: #{message}"
-      end
+      message = body&.fetch('errors')&.first&.fetch('detail')
+      raise err, (message || status.to_s) if err
+      raise Error, "Error #{status}: #{message}"
     end
 
     # Datacentred base error
-    class Error < StandardError ; end
+    class Error < StandardError; end
 
     # Raised when an entity cannot be located using the unique id specified.
     #
@@ -31,20 +28,23 @@ module Datacentred
 
     # Raised when credentials are invalid.
     #
-    # Credentials may be invalid because they're incorrect, or because they correspond to an account
-    # that does not have the correct permissions to access the API.
+    # Credentials may be invalid because they're incorrect, or because they
+    # correspond to an account that does not have the correct permissions
+    # to access the API.
     #
     # Corresponds to a HTTP 403 error.
     class Unauthorized < Error; end
 
-    private
+    class << self
+      private
 
-    def self.errors
-      {
-        401 => Datacentred::Errors::Unauthorized,
-        404 => Datacentred::Errors::NotFound,
-        422 => Datacentred::Errors::UnprocessableEntity
-      }
+      def errors
+        {
+          401 => Datacentred::Errors::Unauthorized,
+          404 => Datacentred::Errors::NotFound,
+          422 => Datacentred::Errors::UnprocessableEntity
+        }
+      end
     end
   end
 end

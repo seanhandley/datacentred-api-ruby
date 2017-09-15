@@ -7,10 +7,10 @@ module Datacentred
       # Instantiate a new model object.
       #
       # @param [Hash] params Object properties as returned by the API.
-      def initialize(params, _opts=nil)
-        params.delete "links" if params['links']
-        
-        ["created_at", "updated_at", "last_updated_at"].each do |key|
+      def initialize(params, _opts = nil)
+        params.delete 'links' if params['links']
+
+        %w(created_at updated_at last_updated_at).each do |key|
           params[key] = Time.parse(params[key]) if params[key]
         end
 

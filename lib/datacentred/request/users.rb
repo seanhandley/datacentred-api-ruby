@@ -8,9 +8,10 @@ module Datacentred
         #   POST /api/users
         #
         # @param [Hash] params User attributes.
-        # @raise [Errors::UnprocessableEntity] Raised if validations fail for the supplied attributes.
+        # @raise [Errors::UnprocessableEntity] Raised if validations
+        #   fail for the supplied attributes.
         # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
-        # @return [Hash] New user.
+        # @return [Hash] New user.
         def create(params)
           post('users', 'user' => params)['user']
         end
@@ -43,7 +44,8 @@ module Datacentred
         #
         # @param [String] id The unique identifier for this user.
         # @param [Hash] params User attributes.
-        # @raise [Errors::UnprocessableEntity] Raised if validations fail for the supplied attributes.
+        # @raise [Errors::UnprocessableEntity] Raised if validations fail
+        #   for the supplied attributes.
         # @raise [Errors::NotFound] Raised if the user couldn't be found.
         # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
         # @return [Hash] The updated user.
@@ -57,7 +59,8 @@ module Datacentred
         #
         # @param [String] id The unique identifier for this user.
         # @raise [Errors::NotFound] Raised if the user couldn't be found.
-        # @raise [Errors::UnprocessableEntity] Raised if validations fail for the specified user.
+        # @raise [Errors::UnprocessableEntity] Raised if validations fail
+        #   for the specified user.
         # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
         # @return [nil] Confirms the user was destroyed.
         def destroy(id)

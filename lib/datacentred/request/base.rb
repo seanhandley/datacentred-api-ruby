@@ -20,7 +20,7 @@ module Datacentred
         # @param [Object] payload JSON serializable object.
         # @raise [Errors::Error] Raised if the server returns a non 2xx error code.
         # @return [Object] Parsed server response body.
-        def post(path, payload=nil)
+        def post(path, payload = nil)
           action :post, path, payload
         end
 
@@ -30,7 +30,7 @@ module Datacentred
         # @param [Object] payload JSON serializable object.
         # @raise [Errors::Error] Raised if the server returns a non 2xx error code.
         # @return [Object] Parsed server response body.
-        def put(path, payload=nil)
+        def put(path, payload = nil)
           action :put, path, payload
         end
 
@@ -45,7 +45,7 @@ module Datacentred
 
         private
 
-        def action(verb, path, payload=nil)
+        def action(verb, path, payload = nil)
           params = [path, payload&.to_json].compact
           response = Datacentred::Response.new connection.send verb, *params
           response.body
@@ -57,25 +57,25 @@ module Datacentred
             faraday.adapter Faraday.default_adapter
             faraday.headers['Accept']        = "#{accept_type}; version=#{api_version}"
             faraday.headers['Authorization'] = "Token token=#{credentials}"
-            faraday.headers['Content-Type']  = "application/json"
-            faraday.path_prefix              = "/api/"
+            faraday.headers['Content-Type']  = 'application/json'
+            faraday.path_prefix              = '/api/'
           end
         end
 
         def accept_type
-          "application/vnd.datacentred.api+json"
+          'application/vnd.datacentred.api+json'
         end
 
         def api_version
-          "1".freeze
+          '1'
         end
 
         def base_url
-          "https://my.datacentred.io"
+          'https://my.datacentred.io'
         end
 
         def credentials
-          [Datacentred.access_key, Datacentred.secret_key].join ":"
+          [Datacentred.access_key, Datacentred.secret_key].join ':'
         end
       end
     end

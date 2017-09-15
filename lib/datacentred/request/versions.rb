@@ -15,7 +15,7 @@ module Datacentred
       #
       # @return [[Hash]] Currently available versions of the API.
       def self.list
-        get("/api")['versions']
+        get('/api')['versions']
       end
     end
   end

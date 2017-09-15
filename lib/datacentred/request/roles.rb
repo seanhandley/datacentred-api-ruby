@@ -8,7 +8,8 @@ module Datacentred
         #   POST /api/roles
         #
         # @param [Hash] params Role attributes.
-        # @raise [Errors::UnprocessableEntity] Raised if validations fail for the supplied attributes.
+        # @raise [Errors::UnprocessableEntity] Raised if validations fail
+        #   for the supplied attributes.
         # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
         # @return [Hash] New role.
         def create(params)
@@ -43,7 +44,8 @@ module Datacentred
         #
         # @param [String] id The unique identifier for this role.
         # @param [Hash] params Role attributes.
-        # @raise [Errors::UnprocessableEntity] Raised if validations fail for the supplied attributes.
+        # @raise [Errors::UnprocessableEntity] Raised if validations fail
+        #   for the supplied attributes.
         # @raise [Errors::NotFound] Raised if the role doesn't exist.
         # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
         # @return [Hash] The updated role.
@@ -57,7 +59,8 @@ module Datacentred
         #
         # @param [String] id The unique identifier for this role.
         # @raise [Errors::NotFound] Raised if the role couldn't be found.
-        # @raise [Errors::UnprocessableEntity] Raised if validations fail for the specifed role.
+        # @raise [Errors::UnprocessableEntity] Raised if validations fail
+        #   for the specifed role.
         # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
         # @return [nil] Confirms the role was destroyed.
         def destroy(id)

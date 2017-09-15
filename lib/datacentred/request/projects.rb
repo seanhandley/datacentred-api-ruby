@@ -8,7 +8,8 @@ module Datacentred
         #   POST /api/projects
         #
         # @param [Hash] params Project attributes.
-        # @raise [Errors::UnprocessableEntity] Raised if validations fail for the supplied attributes.
+        # @raise [Errors::UnprocessableEntity] Raised if validations fail
+        #   for the supplied attributes.
         # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
         # @return [Hash] New project.
         def create(params)
@@ -43,7 +44,8 @@ module Datacentred
         #
         # @param [String] id The unique identifier for this project.
         # @param [Hash] params Project attributes.
-        # @raise [Errors::UnprocessableEntity] Raised if validations fail for the supplied attributes.
+        # @raise [Errors::UnprocessableEntity] Raised if validations fail
+        #   for the supplied attributes.
         # @raise [Errors::NotFound] Raised if the project could not be found.
         # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
         # @return [Hash] The updated project.
@@ -57,7 +59,8 @@ module Datacentred
         #
         # @param [String] id The unique identifier for this project.
         # @raise [Errors::NotFound] Raised if the project couldn't be found.
-        # @raise [Errors::UnprocessableEntity] Raised if validations fail for the specified project.
+        # @raise [Errors::UnprocessableEntity] Raised if validations fail
+        #   for the specified project.
         # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
         # @return [nil] Confirms the user was destroyed.
         def destroy(id)
