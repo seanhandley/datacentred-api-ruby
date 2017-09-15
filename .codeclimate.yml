@@ -9,3 +9,4 @@ ratings:
   - "**.rb"
 exclude_paths:
 - docs/**/*
+- test/**/*
