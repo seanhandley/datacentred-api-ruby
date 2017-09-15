@@ -1,0 +1,11 @@
+engines:
+  rubocop:
+    enabled: true
+    config:
+      file: .rubocop.yml
+ratings:
+  paths:
+  - lib/**
+  - "**.rb"
+exclude_paths:
+- docs/**/*
