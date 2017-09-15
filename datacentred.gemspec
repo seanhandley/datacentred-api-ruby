@@ -1,6 +1,6 @@
 Gem::Specification.new do |gem|
   gem.name        = 'datacentred'
-  gem.version     = '0.1.1pre'
+  gem.version     = '1.1.1pre'
   gem.date        = '2017-09-14'
   gem.summary     = 'datacentred'
   gem.description = 'Gem wrapper for Datacentred API'
