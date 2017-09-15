@@ -9,7 +9,7 @@ module Datacentred
     # @raise [Errors::Error] Raised if response isn't a 2xx status code.
     def initialize(server_response)
       begin
-        @body = JSON.parse server_response.body rescue nil
+        @body = JSON.parse server_response.body
       rescue JSON::ParserError
         @body = nil
       end
