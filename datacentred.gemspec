@@ -3,7 +3,7 @@ Gem::Specification.new do |gem|
   gem.version     = '1.1.1'
   gem.date        = '2017-09-14'
   gem.summary     = 'datacentred'
-  gem.description = 'Gem wrapper for Datacentred API'
+  gem.description = 'Ruby client library for automating DataCentred account management.'
   gem.authors     = [ 'Eugenia Grieff', 'Sean Handley' ]
   gem.email       = 'megrieff@gmail.com'
   gem.files       = `git ls-files`.split("\n")
