@@ -5,7 +5,7 @@ Ruby client library for automating DataCentred account management.
 [www.datacentred.co.uk](https://www.datacentred.co.uk)
 
 [![CircleCI](https://circleci.com/gh/datacentred/datacentred-api-ruby.svg?style=svg&circle-token=c284db6421742dcfe8c50f52945c31d9b976effb)](https://circleci.com/gh/datacentred/datacentred-api-ruby)
-[![Gem Version](https://badge.fury.io/rb/datacentred.png)](http://badge.fury.io/rb/keybase-core) [![Code Climate](https://codeclimate.com/github/datacentred/datacentred-api-ruby/badges/gpa.svg)](https://codeclimate.com/github/datacentred/datacentred-api-ruby) [![Coverage Status](https://coveralls.io/repos/github/datacentred/datacentred-api-ruby/badge.svg?branch=master)](https://coveralls.io/github/datacentred/datacentred-api-ruby?branch=master)
+[![Gem Version](https://badge.fury.io/rb/datacentred.png)](http://badge.fury.io/rb/datacentred) [![Code Climate](https://codeclimate.com/github/datacentred/datacentred-api-ruby/badges/gpa.svg)](https://codeclimate.com/github/datacentred/datacentred-api-ruby) [![Coverage Status](https://coveralls.io/repos/github/datacentred/datacentred-api-ruby/badge.svg?branch=master)](https://coveralls.io/github/datacentred/datacentred-api-ruby?branch=master)
 
 # Installation
 
