@@ -134,15 +134,6 @@ Usage data is returned simply by supplying a year and a month. If the year/month
 => "dc1.1x1"
 ```
 
-## Schemas
-
-There are JSON schemas available for each entity in the gem:
-
-* Projects: https://my.datacentred.io/api/schemas/project
-* Roles: https://my.datacentred.io/api/schemas/role
-* Usage: https://my.datacentred.io/api/schemas/usage
-* User: https://my.datacentred.io/api/schemas/user
-
 ## Errors
 
 The gem may raise the following standard errors:
