@@ -321,7 +321,7 @@ then assigning those roles to users.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Add new user to this role, giving them the associated permissions.</p>
+<p>Confirms that user was added (or is already present).</p>
 </div></span>
   
 </li>
@@ -345,7 +345,7 @@ then assigning those roles to users.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>List all available roles.</p>
+<p>A collection of all roles on this account.</p>
 </div></span>
   
 </li>
@@ -369,7 +369,7 @@ then assigning those roles to users.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Create a new role.</p>
+<p>New role.</p>
 </div></span>
   
 </li>
@@ -393,7 +393,7 @@ then assigning those roles to users.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Permanently remove the specified role.</p>
+<p>Confirms the role was destroyed.</p>
 </div></span>
   
 </li>
@@ -417,7 +417,7 @@ then assigning those roles to users.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Find a role by unique ID.</p>
+<p>The role, if it exists.</p>
 </div></span>
   
 </li>
@@ -441,7 +441,7 @@ then assigning those roles to users.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Remove user from this role, revoking the associated permissions.</p>
+<p>Confirms that user was removed (or is already absent).</p>
 </div></span>
   
 </li>
@@ -465,7 +465,7 @@ then assigning those roles to users.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Update a role by unique ID.</p>
+<p>The updated role.</p>
 </div></span>
   
 </li>
@@ -475,6 +475,135 @@ then assigning those roles to users.</p>
   <span class="summary_signature">
     
       <a href="#users-class_method" title="users (class method)">.<strong>users</strong>(id)  &#x21d2; [User] </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A collection of the role&#39;s users.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_user-instance_method" title="#add_user (instance method)">#<strong>add_user</strong>(user)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Add new user to this role, giving them the associated permissions.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#destroy-instance_method" title="#destroy (instance method)">#<strong>destroy</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Destroy this role.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#remove_user-instance_method" title="#remove_user (instance method)">#<strong>remove_user</strong>(user)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Remove user from this role, revoking the associated permissions.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#save-instance_method" title="#save (instance method)">#<strong>save</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Save any attribute changes to this role.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#users-instance_method" title="#users (instance method)">#<strong>users</strong>  &#x21d2; [User] </a>
     
 
     
@@ -905,49 +1034,13 @@ then assigning those roles to users.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Add new user to this role, giving them the associated permissions.</p>
+<p>Returns Confirms that user was added (or is already present).</p>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>role_id</span>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The unique identifier for this role.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>user_id</span>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The unique identifier for this user.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
@@ -961,38 +1054,6 @@ then assigning those roles to users.</p>
         &mdash;
         <div class='inline'>
 <p>Confirms that user was added (or is already present).</p>
-</div>
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/NotFound.html" title="Datacentred::Errors::NotFound (class)">Errors::NotFound</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if the role or user couldn&#39;t be found.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/Unauthorized.html" title="Datacentred::Errors::Unauthorized (class)">Errors::Unauthorized</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if credentials aren&#39;t valid.</p>
 </div>
       
     </li>
@@ -1034,7 +1095,7 @@ then assigning those roles to users.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>List all available roles.</p>
+<p>Returns A collection of all roles on this account.</p>
 
 
   </div>
@@ -1054,24 +1115,6 @@ then assigning those roles to users.</p>
         &mdash;
         <div class='inline'>
 <p>A collection of all roles on this account.</p>
-</div>
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/Unauthorized.html" title="Datacentred::Errors::Unauthorized (class)">Errors::Unauthorized</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if credentials aren&#39;t valid.</p>
 </div>
       
     </li>
@@ -1111,33 +1154,13 @@ then assigning those roles to users.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Create a new role.</p>
+<p>Returns New role.</p>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>params</span>
-      
-      
-        <span class='type'>(<tt>Hash</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Role attributes.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
@@ -1151,38 +1174,6 @@ then assigning those roles to users.</p>
         &mdash;
         <div class='inline'>
 <p>New role.</p>
-</div>
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/UnprocessableEntity.html" title="Datacentred::Errors::UnprocessableEntity (class)">Errors::UnprocessableEntity</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if validations fail for the supplied attributes.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/Unauthorized.html" title="Datacentred::Errors::Unauthorized (class)">Errors::Unauthorized</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if credentials aren&#39;t valid.</p>
 </div>
       
     </li>
@@ -1222,33 +1213,13 @@ then assigning those roles to users.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Permanently remove the specified role.</p>
+<p>Returns Confirms the role was destroyed.</p>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>id</span>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The unique identifier for this role.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
@@ -1262,52 +1233,6 @@ then assigning those roles to users.</p>
         &mdash;
         <div class='inline'>
 <p>Confirms the role was destroyed.</p>
-</div>
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/NotFound.html" title="Datacentred::Errors::NotFound (class)">Errors::NotFound</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if the role couldn&#39;t be found.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/UnprocessableEntity.html" title="Datacentred::Errors::UnprocessableEntity (class)">Errors::UnprocessableEntity</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if validations fail for the specifed role.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/Unauthorized.html" title="Datacentred::Errors::Unauthorized (class)">Errors::Unauthorized</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if credentials aren&#39;t valid.</p>
 </div>
       
     </li>
@@ -1349,33 +1274,13 @@ then assigning those roles to users.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Find a role by unique ID.</p>
+<p>Returns The role, if it exists.</p>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>id</span>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The unique identifier for this role.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
@@ -1389,38 +1294,6 @@ then assigning those roles to users.</p>
         &mdash;
         <div class='inline'>
 <p>The role, if it exists.</p>
-</div>
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/NotFound.html" title="Datacentred::Errors::NotFound (class)">Errors::NotFound</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if the role couldn&#39;t be found.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/Unauthorized.html" title="Datacentred::Errors::Unauthorized (class)">Errors::Unauthorized</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if credentials aren&#39;t valid.</p>
 </div>
       
     </li>
@@ -1460,49 +1333,13 @@ then assigning those roles to users.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Remove user from this role, revoking the associated permissions.</p>
+<p>Returns Confirms that user was removed (or is already absent).</p>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>role_id</span>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The unique identifier for this role.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>user_id</span>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The unique identifier for this user.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
@@ -1516,38 +1353,6 @@ then assigning those roles to users.</p>
         &mdash;
         <div class='inline'>
 <p>Confirms that user was removed (or is already absent).</p>
-</div>
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/NotFound.html" title="Datacentred::Errors::NotFound (class)">Errors::NotFound</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if the role or user coundn&#39;t be found.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/Unauthorized.html" title="Datacentred::Errors::Unauthorized (class)">Errors::Unauthorized</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if credentials aren&#39;t valid.</p>
 </div>
       
     </li>
@@ -1589,49 +1394,13 @@ then assigning those roles to users.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Update a role by unique ID.</p>
+<p>Returns The updated role.</p>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>id</span>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The unique identifier for this role.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>params</span>
-      
-      
-        <span class='type'>(<tt>Hash</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Role attributes.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
@@ -1645,52 +1414,6 @@ then assigning those roles to users.</p>
         &mdash;
         <div class='inline'>
 <p>The updated role.</p>
-</div>
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/UnprocessableEntity.html" title="Datacentred::Errors::UnprocessableEntity (class)">Errors::UnprocessableEntity</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if validations fail for the supplied attributes.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/NotFound.html" title="Datacentred::Errors::NotFound (class)">Errors::NotFound</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if the role doesn&#39;t exist.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/Unauthorized.html" title="Datacentred::Errors::Unauthorized (class)">Errors::Unauthorized</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if credentials aren&#39;t valid.</p>
 </div>
       
     </li>
@@ -1730,33 +1453,13 @@ then assigning those roles to users.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>List all users assigned to this role.</p>
+<p>Returns A collection of the role&#39;s users.</p>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>id</span>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The unique identifier for this role.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
@@ -1770,24 +1473,6 @@ then assigning those roles to users.</p>
         &mdash;
         <div class='inline'>
 <p>A collection of the role&#39;s users.</p>
-</div>
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/Unauthorized.html" title="Datacentred::Errors::Unauthorized (class)">Errors::Unauthorized</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if credentials aren&#39;t valid.</p>
 </div>
       
     </li>
@@ -1817,10 +1502,355 @@ then assigning those roles to users.</p>
     
   </div>
 
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="add_user-instance_method">
+  
+    #<strong>add_user</strong>(user)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Add new user to this role, giving them the associated permissions.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>user</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="User.html" title="Datacentred::Model::User (class)">User</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The user model to add.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Confirms that user was added (or is already present).</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+132
+133
+134</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 132</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_add_user'>add_user</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="" title="Datacentred::Model::Role (class)">Role</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_user'><span class='object_link'><a href="#add_user-class_method" title="Datacentred::Model::Role.add_user (method)">add_user</a></span></span> <span class='label'>role_id:</span> <span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>user_id:</span> <span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="destroy-instance_method">
+  
+    #<strong>destroy</strong>  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Destroy this role.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Confirms that the role is destroyed.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+116
+117
+118
+119</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 116</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_destroy'>destroy</span>
+  <span class='const'><span class='object_link'><a href="" title="Datacentred::Model::Role (class)">Role</a></span></span><span class='period'>.</span><span class='id identifier rubyid_destroy'><span class='object_link'><a href="#destroy-class_method" title="Datacentred::Model::Role.destroy (method)">destroy</a></span></span> <span class='id identifier rubyid_id'>id</span>
+  <span class='kw'>true</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="remove_user-instance_method">
+  
+    #<strong>remove_user</strong>(user)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Remove user from this role, revoking the associated permissions.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>user</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="User.html" title="Datacentred::Model::User (class)">User</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The user model to remove.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Confirms that user was removed (or is already absent).</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+140
+141
+142</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 140</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_remove_user'>remove_user</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="" title="Datacentred::Model::Role (class)">Role</a></span></span><span class='period'>.</span><span class='id identifier rubyid_remove_user'><span class='object_link'><a href="#remove_user-class_method" title="Datacentred::Model::Role.remove_user (method)">remove_user</a></span></span> <span class='label'>role_id:</span> <span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>user_id:</span> <span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="save-instance_method">
+  
+    #<strong>save</strong>  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Save any attribute changes to this role.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Confirms that the changes are saved.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+108
+109
+110
+111</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 108</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_save'>save</span>
+  <span class='const'><span class='object_link'><a href="" title="Datacentred::Model::Role (class)">Role</a></span></span><span class='period'>.</span><span class='id identifier rubyid_update'><span class='object_link'><a href="#update-class_method" title="Datacentred::Model::Role.update (method)">update</a></span></span> <span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_to_h'>to_h</span>
+  <span class='kw'>true</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="users-instance_method">
+  
+    #<strong>users</strong>  &#x21d2; <tt>[<span class='object_link'><a href="User.html" title="Datacentred::Model::User (class)">User</a></span>]</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>List all users assigned to this role.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>[<span class='object_link'><a href="User.html" title="Datacentred::Model::User (class)">User</a></span>]</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A collection of the role&#39;s users.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+124
+125
+126</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 124</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_users'>users</span>
+  <span class='const'><span class='object_link'><a href="" title="Datacentred::Model::Role (class)">Role</a></span></span><span class='period'>.</span><span class='id identifier rubyid_users'><span class='object_link'><a href="#users-class_method" title="Datacentred::Model::Role.users (method)">users</a></span></span> <span class='id identifier rubyid_id'>id</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
 </div>
 
       <div id="footer">
-  Generated on Wed Sep 20 12:48:52 2017 by
+  Generated on Wed Sep 20 21:02:06 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.3.1).
 </div>

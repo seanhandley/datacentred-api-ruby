@@ -1,0 +1,378 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://my.datacentred.io/api/projects
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.datacentred.api+json; version=1
+      Authorization:
+      - Token token=access_key:secret_key
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.3
+      Date:
+      - Wed, 20 Sep 2017 19:56:28 GMT
+      Content-Type:
+      - application/vnd.datacentred.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Api-Version:
+      - '1'
+      Etag:
+      - W/"ac2164f8e969a1a73bf71e14c57df2ea"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 3f7ca940-df5b-4702-943e-34fbbc47ea64
+      X-Runtime:
+      - '0.161052'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"projects":[{"id":"ed4431814d0a40dc8f10f5ac046267e9","name":"datacentred","created_at":"2015-03-09T17:58:18Z","updated_at":"2017-05-19T13:12:07Z","quota_set":{"compute":{"instances":100,"cores":200,"ram":512000},"volume":{"volumes":10,"snapshots":10,"gigabytes":10240},"network":{"floatingip":50,"router":10,"security_group_rule":100,"security_group":10,"network":10,"port":50,"subnet":10,"pool":10,"vip":12}},"links":[{"href":"https://my.datacentred.io/api/projects/ed4431814d0a40dc8f10f5ac046267e9","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/project","rel":"schema"}]},{"id":"f696f7db30e84fa4bc6713e024c0bb97","name":"ooo","created_at":"2016-03-14T15:19:53Z","updated_at":"2016-03-14T15:19:54Z","quota_set":{"compute":{"instances":10,"cores":10,"ram":20480},"volume":{"volumes":4,"snapshots":4,"gigabytes":40},"network":{"floatingip":1,"router":1,"security_group_rule":100,"security_group":10,"network":10,"port":10,"subnet":10,"pool":10,"vip":10}},"links":[{"href":"https://my.datacentred.io/api/projects/f696f7db30e84fa4bc6713e024c0bb97","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/project","rel":"schema"}]},{"id":"7f5fcf601a8243be86a4d77c123abe3b","name":"datacentred_canary0","created_at":"2016-05-31T15:35:11Z","updated_at":"2016-05-31T15:36:38Z","quota_set":{"compute":{"instances":10,"cores":10,"ram":20480},"volume":{"volumes":4,"snapshots":4,"gigabytes":40},"network":{"floatingip":1,"router":1,"security_group_rule":100,"security_group":10,"network":10,"port":10,"subnet":10,"pool":10,"vip":10}},"links":[{"href":"https://my.datacentred.io/api/projects/7f5fcf601a8243be86a4d77c123abe3b","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/project","rel":"schema"}]},{"id":"0846a06abd924f93b5a39e35dfddf2f5","name":"datacentred_canary1","created_at":"2016-05-31T15:35:31Z","updated_at":"2016-05-31T15:36:45Z","quota_set":{"compute":{"instances":10,"cores":10,"ram":20480},"volume":{"volumes":4,"snapshots":4,"gigabytes":40},"network":{"floatingip":1,"router":1,"security_group_rule":100,"security_group":10,"network":10,"port":10,"subnet":10,"pool":10,"vip":10}},"links":[{"href":"https://my.datacentred.io/api/projects/0846a06abd924f93b5a39e35dfddf2f5","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/project","rel":"schema"}]},{"id":"8c585ddbab68454c98808847e41f64b9","name":"datacentred_canary2","created_at":"2016-05-31T15:35:45Z","updated_at":"2016-05-31T15:36:53Z","quota_set":{"compute":{"instances":10,"cores":10,"ram":20480},"volume":{"volumes":4,"snapshots":4,"gigabytes":40},"network":{"floatingip":1,"router":1,"security_group_rule":100,"security_group":10,"network":10,"port":10,"subnet":10,"pool":10,"vip":10}},"links":[{"href":"https://my.datacentred.io/api/projects/8c585ddbab68454c98808847e41f64b9","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/project","rel":"schema"}]},{"id":"c26d245ce4e741d78c61501327ac8e94","name":"sandbox","created_at":"2016-06-10T13:38:55Z","updated_at":"2017-06-02T14:47:50Z","quota_set":{"compute":{"instances":10,"cores":10,"ram":20480},"volume":{"volumes":4,"snapshots":4,"gigabytes":40},"network":{"floatingip":1,"router":1,"security_group_rule":100,"security_group":10,"network":10,"port":10,"subnet":10,"pool":10,"vip":10}},"links":[{"href":"https://my.datacentred.io/api/projects/c26d245ce4e741d78c61501327ac8e94","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/project","rel":"schema"}]},{"id":"1d2ea4460b514f459a9d9ed4a155fab3","name":"devops","created_at":"2016-07-25T13:53:33Z","updated_at":"2017-02-09T11:56:19Z","quota_set":{"compute":{"instances":5,"cores":5,"ram":10240},"volume":{"volumes":4,"snapshots":4,"gigabytes":50},"network":{"floatingip":1,"router":1,"security_group_rule":100,"security_group":10,"network":10,"port":10,"subnet":10,"pool":10,"vip":10}},"links":[{"href":"https://my.datacentred.io/api/projects/1d2ea4460b514f459a9d9ed4a155fab3","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/project","rel":"schema"}]},{"id":"d47d9bc65ff645b48956c3f5a5f62fee","name":"monitoring_tenancy","created_at":"2016-12-13T14:17:59Z","updated_at":"2017-02-02T14:14:13Z","quota_set":{"compute":{"instances":10,"cores":10,"ram":20240},"volume":{"volumes":8,"snapshots":8,"gigabytes":80},"network":{"floatingip":5,"router":5,"security_group_rule":100,"security_group":10,"network":10,"port":20,"subnet":10,"pool":10,"vip":10}},"links":[{"href":"https://my.datacentred.io/api/projects/d47d9bc65ff645b48956c3f5a5f62fee","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/project","rel":"schema"}]}]}'
+    http_version: 
+  recorded_at: Wed, 20 Sep 2017 19:56:28 GMT
+- request:
+    method: post
+    uri: https://my.datacentred.io/api/users
+    body:
+      encoding: UTF-8
+      string: '{"user":{"email":"foo@barbazboom.com","password":"3eba71bf5c5aab75673840dca073af02"}}'
+    headers:
+      Accept:
+      - application/vnd.datacentred.api+json; version=1
+      Authorization:
+      - Token token=access_key:secret_key
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - nginx/1.10.3
+      Date:
+      - Wed, 20 Sep 2017 19:56:31 GMT
+      Content-Type:
+      - application/vnd.datacentred.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Api-Version:
+      - '1'
+      Etag:
+      - W/"7e8cda4da7051971030655e1daaed45d"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - c33441a9-93a5-4f8c-a639-d5cfa27ed9cd
+      X-Runtime:
+      - '2.848827'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"user":{"id":"026a928d511d498bb8e28e2d3bc699f9","email":"foo@barbazboom.com","first_name":null,"last_name":null,"created_at":"2017-09-20T19:56:28Z","updated_at":"2017-09-20T19:56:28Z","links":[{"href":"https://my.datacentred.io/api/users/026a928d511d498bb8e28e2d3bc699f9","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/user","rel":"schema"}]}}'
+    http_version: 
+  recorded_at: Wed, 20 Sep 2017 19:56:31 GMT
+- request:
+    method: get
+    uri: https://my.datacentred.io/api/projects/ed4431814d0a40dc8f10f5ac046267e9/users
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.datacentred.api+json; version=1
+      Authorization:
+      - Token token=access_key:secret_key
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.3
+      Date:
+      - Wed, 20 Sep 2017 19:56:31 GMT
+      Content-Type:
+      - application/vnd.datacentred.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Api-Version:
+      - '1'
+      Etag:
+      - W/"1626feb900ec17ed44900fc7a8d6b82a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - caa8e307-3619-46e6-a878-6bd3dc898784
+      X-Runtime:
+      - '0.167580'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"users":[{"id":"69a34c127dcb439fa9366762234687ac","email":"sean.handley@datacentred.co.uk","first_name":"Sean","last_name":"Handley","created_at":"2014-08-22T14:32:31Z","updated_at":"2017-09-20T19:51:43Z","links":[{"href":"https://my.datacentred.io/api/users/69a34c127dcb439fa9366762234687ac","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/user","rel":"schema"}]},{"id":"d1a60c7b4bbc427e8f2c3f99d0c2e6d2","email":"nick.jones@datacentred.co.uk","first_name":"Nick","last_name":"Jones","created_at":"2014-09-18T15:35:58Z","updated_at":"2017-09-20T12:51:32Z","links":[{"href":"https://my.datacentred.io/api/users/d1a60c7b4bbc427e8f2c3f99d0c2e6d2","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/user","rel":"schema"}]},{"id":"9b4619fd407a495bbef18d24b61a7684","email":"spjmurray@yahoo.co.uk","first_name":"Simon","last_name":"Murray","created_at":"2014-11-13T12:47:16Z","updated_at":"2017-08-30T21:00:13Z","links":[{"href":"https://my.datacentred.io/api/users/9b4619fd407a495bbef18d24b61a7684","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/user","rel":"schema"}]},{"id":"15fead9903d24642b6dc1b9f73f41e78","email":"matt.illingworth@datacentred.co.uk","first_name":"Matt","last_name":"Illingworth","created_at":"2015-11-05T12:51:58Z","updated_at":"2017-09-18T11:33:10Z","links":[{"href":"https://my.datacentred.io/api/users/15fead9903d24642b6dc1b9f73f41e78","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/user","rel":"schema"}]},{"id":"936157511fa1450da46f7ae9c1c477df","email":"mariusz.karpiarz@datacentred.co.uk","first_name":"Mariusz","last_name":"Karpiarz","created_at":"2016-05-26T14:52:20Z","updated_at":"2017-08-23T16:25:45Z","links":[{"href":"https://my.datacentred.io/api/users/936157511fa1450da46f7ae9c1c477df","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/user","rel":"schema"}]},{"id":"e1e4b19054c245c8be9da586c6199372","email":"devops@datacentred.co.uk","first_name":"Dev","last_name":"Ops","created_at":"2014-08-22T14:32:31Z","updated_at":"2016-07-25T14:22:03Z","links":[{"href":"https://my.datacentred.io/api/users/e1e4b19054c245c8be9da586c6199372","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/user","rel":"schema"}]},{"id":"9266d90cd370470d9ffbaaa14a023620","email":"peter.tar@datacentred.co.uk","first_name":"Peter","last_name":"Tar","created_at":"2017-02-08T15:20:37Z","updated_at":"2017-09-20T11:44:33Z","links":[{"href":"https://my.datacentred.io/api/users/9266d90cd370470d9ffbaaa14a023620","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/user","rel":"schema"}]},{"id":"22add55e08614f8ab48cf5c1bc2d65a6","email":"bartosz.miklaszewski@datacentred.co.uk","first_name":"","last_name":"bartosz.miklaszewski@datacentred.co.uk","created_at":"2017-02-28T16:53:33Z","updated_at":"2017-09-20T13:21:48Z","links":[{"href":"https://my.datacentred.io/api/users/22add55e08614f8ab48cf5c1bc2d65a6","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/user","rel":"schema"}]},{"id":"6c463e095b31468498f451a3234f69b6","email":"eugenia.grieff@datacentred.co.uk","first_name":null,"last_name":null,"created_at":"2017-05-24T13:49:07Z","updated_at":"2017-09-12T12:14:05Z","links":[{"href":"https://my.datacentred.io/api/users/6c463e095b31468498f451a3234f69b6","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/user","rel":"schema"}]}]}'
+    http_version: 
+  recorded_at: Wed, 20 Sep 2017 19:56:31 GMT
+- request:
+    method: put
+    uri: https://my.datacentred.io/api/projects/ed4431814d0a40dc8f10f5ac046267e9/users/026a928d511d498bb8e28e2d3bc699f9
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.datacentred.api+json; version=1
+      Authorization:
+      - Token token=access_key:secret_key
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Server:
+      - nginx/1.10.3
+      Date:
+      - Wed, 20 Sep 2017 19:56:32 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Api-Version:
+      - '1'
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 0ee80cff-086b-4c02-9e86-85ddbdc26387
+      X-Runtime:
+      - '0.617933'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Wed, 20 Sep 2017 19:56:32 GMT
+- request:
+    method: get
+    uri: https://my.datacentred.io/api/projects/ed4431814d0a40dc8f10f5ac046267e9/users
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.datacentred.api+json; version=1
+      Authorization:
+      - Token token=access_key:secret_key
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.3
+      Date:
+      - Wed, 20 Sep 2017 19:56:32 GMT
+      Content-Type:
+      - application/vnd.datacentred.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Api-Version:
+      - '1'
+      Etag:
+      - W/"7cc71b47a2c58aa9c844a86bbbf30f78"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 0ef21271-fb76-4d36-9e0b-ee1a5f676b5c
+      X-Runtime:
+      - '0.141442'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"users":[{"id":"69a34c127dcb439fa9366762234687ac","email":"sean.handley@datacentred.co.uk","first_name":"Sean","last_name":"Handley","created_at":"2014-08-22T14:32:31Z","updated_at":"2017-09-20T19:51:43Z","links":[{"href":"https://my.datacentred.io/api/users/69a34c127dcb439fa9366762234687ac","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/user","rel":"schema"}]},{"id":"d1a60c7b4bbc427e8f2c3f99d0c2e6d2","email":"nick.jones@datacentred.co.uk","first_name":"Nick","last_name":"Jones","created_at":"2014-09-18T15:35:58Z","updated_at":"2017-09-20T12:51:32Z","links":[{"href":"https://my.datacentred.io/api/users/d1a60c7b4bbc427e8f2c3f99d0c2e6d2","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/user","rel":"schema"}]},{"id":"9b4619fd407a495bbef18d24b61a7684","email":"spjmurray@yahoo.co.uk","first_name":"Simon","last_name":"Murray","created_at":"2014-11-13T12:47:16Z","updated_at":"2017-08-30T21:00:13Z","links":[{"href":"https://my.datacentred.io/api/users/9b4619fd407a495bbef18d24b61a7684","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/user","rel":"schema"}]},{"id":"15fead9903d24642b6dc1b9f73f41e78","email":"matt.illingworth@datacentred.co.uk","first_name":"Matt","last_name":"Illingworth","created_at":"2015-11-05T12:51:58Z","updated_at":"2017-09-18T11:33:10Z","links":[{"href":"https://my.datacentred.io/api/users/15fead9903d24642b6dc1b9f73f41e78","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/user","rel":"schema"}]},{"id":"936157511fa1450da46f7ae9c1c477df","email":"mariusz.karpiarz@datacentred.co.uk","first_name":"Mariusz","last_name":"Karpiarz","created_at":"2016-05-26T14:52:20Z","updated_at":"2017-08-23T16:25:45Z","links":[{"href":"https://my.datacentred.io/api/users/936157511fa1450da46f7ae9c1c477df","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/user","rel":"schema"}]},{"id":"e1e4b19054c245c8be9da586c6199372","email":"devops@datacentred.co.uk","first_name":"Dev","last_name":"Ops","created_at":"2014-08-22T14:32:31Z","updated_at":"2016-07-25T14:22:03Z","links":[{"href":"https://my.datacentred.io/api/users/e1e4b19054c245c8be9da586c6199372","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/user","rel":"schema"}]},{"id":"9266d90cd370470d9ffbaaa14a023620","email":"peter.tar@datacentred.co.uk","first_name":"Peter","last_name":"Tar","created_at":"2017-02-08T15:20:37Z","updated_at":"2017-09-20T11:44:33Z","links":[{"href":"https://my.datacentred.io/api/users/9266d90cd370470d9ffbaaa14a023620","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/user","rel":"schema"}]},{"id":"22add55e08614f8ab48cf5c1bc2d65a6","email":"bartosz.miklaszewski@datacentred.co.uk","first_name":"","last_name":"bartosz.miklaszewski@datacentred.co.uk","created_at":"2017-02-28T16:53:33Z","updated_at":"2017-09-20T13:21:48Z","links":[{"href":"https://my.datacentred.io/api/users/22add55e08614f8ab48cf5c1bc2d65a6","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/user","rel":"schema"}]},{"id":"6c463e095b31468498f451a3234f69b6","email":"eugenia.grieff@datacentred.co.uk","first_name":null,"last_name":null,"created_at":"2017-05-24T13:49:07Z","updated_at":"2017-09-12T12:14:05Z","links":[{"href":"https://my.datacentred.io/api/users/6c463e095b31468498f451a3234f69b6","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/user","rel":"schema"}]},{"id":"026a928d511d498bb8e28e2d3bc699f9","email":"foo@barbazboom.com","first_name":null,"last_name":null,"created_at":"2017-09-20T19:56:28Z","updated_at":"2017-09-20T19:56:28Z","links":[{"href":"https://my.datacentred.io/api/users/026a928d511d498bb8e28e2d3bc699f9","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/user","rel":"schema"}]}]}'
+    http_version: 
+  recorded_at: Wed, 20 Sep 2017 19:56:32 GMT
+- request:
+    method: delete
+    uri: https://my.datacentred.io/api/projects/ed4431814d0a40dc8f10f5ac046267e9/users/026a928d511d498bb8e28e2d3bc699f9
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.datacentred.api+json; version=1
+      Authorization:
+      - Token token=access_key:secret_key
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Server:
+      - nginx/1.10.3
+      Date:
+      - Wed, 20 Sep 2017 19:56:32 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Api-Version:
+      - '1'
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 05fe1550-a694-4b00-9119-ddaeaa9a8c35
+      X-Runtime:
+      - '0.181585'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Wed, 20 Sep 2017 19:56:32 GMT
+- request:
+    method: get
+    uri: https://my.datacentred.io/api/projects/ed4431814d0a40dc8f10f5ac046267e9/users
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.datacentred.api+json; version=1
+      Authorization:
+      - Token token=access_key:secret_key
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.3
+      Date:
+      - Wed, 20 Sep 2017 19:56:32 GMT
+      Content-Type:
+      - application/vnd.datacentred.api+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Api-Version:
+      - '1'
+      Etag:
+      - W/"1626feb900ec17ed44900fc7a8d6b82a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 4d092ee8-299e-4110-b6f0-a64baa7ac3c5
+      X-Runtime:
+      - '0.137197'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"users":[{"id":"69a34c127dcb439fa9366762234687ac","email":"sean.handley@datacentred.co.uk","first_name":"Sean","last_name":"Handley","created_at":"2014-08-22T14:32:31Z","updated_at":"2017-09-20T19:51:43Z","links":[{"href":"https://my.datacentred.io/api/users/69a34c127dcb439fa9366762234687ac","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/user","rel":"schema"}]},{"id":"d1a60c7b4bbc427e8f2c3f99d0c2e6d2","email":"nick.jones@datacentred.co.uk","first_name":"Nick","last_name":"Jones","created_at":"2014-09-18T15:35:58Z","updated_at":"2017-09-20T12:51:32Z","links":[{"href":"https://my.datacentred.io/api/users/d1a60c7b4bbc427e8f2c3f99d0c2e6d2","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/user","rel":"schema"}]},{"id":"9b4619fd407a495bbef18d24b61a7684","email":"spjmurray@yahoo.co.uk","first_name":"Simon","last_name":"Murray","created_at":"2014-11-13T12:47:16Z","updated_at":"2017-08-30T21:00:13Z","links":[{"href":"https://my.datacentred.io/api/users/9b4619fd407a495bbef18d24b61a7684","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/user","rel":"schema"}]},{"id":"15fead9903d24642b6dc1b9f73f41e78","email":"matt.illingworth@datacentred.co.uk","first_name":"Matt","last_name":"Illingworth","created_at":"2015-11-05T12:51:58Z","updated_at":"2017-09-18T11:33:10Z","links":[{"href":"https://my.datacentred.io/api/users/15fead9903d24642b6dc1b9f73f41e78","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/user","rel":"schema"}]},{"id":"936157511fa1450da46f7ae9c1c477df","email":"mariusz.karpiarz@datacentred.co.uk","first_name":"Mariusz","last_name":"Karpiarz","created_at":"2016-05-26T14:52:20Z","updated_at":"2017-08-23T16:25:45Z","links":[{"href":"https://my.datacentred.io/api/users/936157511fa1450da46f7ae9c1c477df","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/user","rel":"schema"}]},{"id":"e1e4b19054c245c8be9da586c6199372","email":"devops@datacentred.co.uk","first_name":"Dev","last_name":"Ops","created_at":"2014-08-22T14:32:31Z","updated_at":"2016-07-25T14:22:03Z","links":[{"href":"https://my.datacentred.io/api/users/e1e4b19054c245c8be9da586c6199372","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/user","rel":"schema"}]},{"id":"9266d90cd370470d9ffbaaa14a023620","email":"peter.tar@datacentred.co.uk","first_name":"Peter","last_name":"Tar","created_at":"2017-02-08T15:20:37Z","updated_at":"2017-09-20T11:44:33Z","links":[{"href":"https://my.datacentred.io/api/users/9266d90cd370470d9ffbaaa14a023620","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/user","rel":"schema"}]},{"id":"22add55e08614f8ab48cf5c1bc2d65a6","email":"bartosz.miklaszewski@datacentred.co.uk","first_name":"","last_name":"bartosz.miklaszewski@datacentred.co.uk","created_at":"2017-02-28T16:53:33Z","updated_at":"2017-09-20T13:21:48Z","links":[{"href":"https://my.datacentred.io/api/users/22add55e08614f8ab48cf5c1bc2d65a6","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/user","rel":"schema"}]},{"id":"6c463e095b31468498f451a3234f69b6","email":"eugenia.grieff@datacentred.co.uk","first_name":null,"last_name":null,"created_at":"2017-05-24T13:49:07Z","updated_at":"2017-09-12T12:14:05Z","links":[{"href":"https://my.datacentred.io/api/users/6c463e095b31468498f451a3234f69b6","rel":"self"},{"href":"https://my.datacentred.io/api/v1/schemas/user","rel":"schema"}]}]}'
+    http_version: 
+  recorded_at: Wed, 20 Sep 2017 19:56:32 GMT
+recorded_with: VCR 2.9.3

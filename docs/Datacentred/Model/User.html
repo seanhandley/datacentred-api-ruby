@@ -153,7 +153,7 @@ user in OpenStack&#39;s identity service (Keystone).</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>List all available users.</p>
+<p>A collection of all users on this account.</p>
 </div></span>
   
 </li>
@@ -177,7 +177,7 @@ user in OpenStack&#39;s identity service (Keystone).</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Create a new user.</p>
+<p>New user.</p>
 </div></span>
   
 </li>
@@ -225,7 +225,7 @@ user in OpenStack&#39;s identity service (Keystone).</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Find a user by unique ID.</p>
+<p>The user, if it exists.</p>
 </div></span>
   
 </li>
@@ -249,7 +249,64 @@ user in OpenStack&#39;s identity service (Keystone).</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Update a user by unique ID.</p>
+<p>The updated user.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#destroy-instance_method" title="#destroy (instance method)">#<strong>destroy</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Destroy this user.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#save-instance_method" title="#save (instance method)">#<strong>save</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Save any attribute changes to this user.</p>
 </div></span>
   
 </li>
@@ -294,7 +351,7 @@ user in OpenStack&#39;s identity service (Keystone).</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>List all available users.</p>
+<p>Returns A collection of all users on this account.</p>
 
 
   </div>
@@ -314,24 +371,6 @@ user in OpenStack&#39;s identity service (Keystone).</p>
         &mdash;
         <div class='inline'>
 <p>A collection of all users on this account.</p>
-</div>
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/Unauthorized.html" title="Datacentred::Errors::Unauthorized (class)">Errors::Unauthorized</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if credentials aren&#39;t valid.</p>
 </div>
       
     </li>
@@ -371,33 +410,13 @@ user in OpenStack&#39;s identity service (Keystone).</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Create a new user.</p>
+<p>Returns New user.</p>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>params</span>
-      
-      
-        <span class='type'>(<tt>Hash</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>User attributes.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
@@ -411,38 +430,6 @@ user in OpenStack&#39;s identity service (Keystone).</p>
         &mdash;
         <div class='inline'>
 <p>New user.</p>
-</div>
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/UnprocessableEntity.html" title="Datacentred::Errors::UnprocessableEntity (class)">Errors::UnprocessableEntity</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if validations fail for the supplied attributes.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/Unauthorized.html" title="Datacentred::Errors::Unauthorized (class)">Errors::Unauthorized</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if credentials aren&#39;t valid.</p>
 </div>
       
     </li>
@@ -558,20 +545,6 @@ user in OpenStack&#39;s identity service (Keystone).</p>
       
     </li>
   
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/Unauthorized.html" title="Datacentred::Errors::Unauthorized (class)">Errors::Unauthorized</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if credentials aren&#39;t valid.</p>
-</div>
-      
-    </li>
-  
 </ul>
 
 </div><table class="source_code">
@@ -580,13 +553,13 @@ user in OpenStack&#39;s identity service (Keystone).</p>
       <pre class="lines">
 
 
+60
 61
 62
-63
-64</pre>
+63</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred/model/user.rb', line 61</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/user.rb', line 60</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_destroy'>destroy</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
   <span class='const'><span class='object_link'><a href="../Request.html" title="Datacentred::Request (module)">Request</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Request/Users.html" title="Datacentred::Request::Users (class)">Users</a></span></span><span class='period'>.</span><span class='id identifier rubyid_destroy'><span class='object_link'><a href="../Request/Users.html#destroy-class_method" title="Datacentred::Request::Users.destroy (method)">destroy</a></span></span> <span class='id identifier rubyid_id'>id</span>
@@ -609,33 +582,13 @@ user in OpenStack&#39;s identity service (Keystone).</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Find a user by unique ID.</p>
+<p>Returns The user, if it exists.</p>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>id</span>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The unique identifier for this user.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
@@ -649,38 +602,6 @@ user in OpenStack&#39;s identity service (Keystone).</p>
         &mdash;
         <div class='inline'>
 <p>The user, if it exists.</p>
-</div>
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/NotFound.html" title="Datacentred::Errors::NotFound (class)">Errors::NotFound</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if the user couldn&#39;t be found.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/Unauthorized.html" title="Datacentred::Errors::Unauthorized (class)">Errors::Unauthorized</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if credentials aren&#39;t valid.</p>
 </div>
       
     </li>
@@ -720,49 +641,13 @@ user in OpenStack&#39;s identity service (Keystone).</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Update a user by unique ID.</p>
+<p>Returns The updated user.</p>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>id</span>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The unique identifier for this user.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>params</span>
-      
-      
-        <span class='type'>(<tt>Hash</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>User attributes.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
@@ -776,52 +661,6 @@ user in OpenStack&#39;s identity service (Keystone).</p>
         &mdash;
         <div class='inline'>
 <p>The updated user.</p>
-</div>
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/UnprocessableEntity.html" title="Datacentred::Errors::UnprocessableEntity (class)">Errors::UnprocessableEntity</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if validations fail for the supplied attributes.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/NotFound.html" title="Datacentred::Errors::NotFound (class)">Errors::NotFound</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if the user couldn&#39;t be found.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/Unauthorized.html" title="Datacentred::Errors::Unauthorized (class)">Errors::Unauthorized</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if credentials aren&#39;t valid.</p>
 </div>
       
     </li>
@@ -851,10 +690,138 @@ user in OpenStack&#39;s identity service (Keystone).</p>
     
   </div>
 
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="destroy-instance_method">
+  
+    #<strong>destroy</strong>  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Destroy this user.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Confirms that the user is destroyed.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+77
+78
+79
+80</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/user.rb', line 77</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_destroy'>destroy</span>
+  <span class='const'><span class='object_link'><a href="" title="Datacentred::Model::User (class)">User</a></span></span><span class='period'>.</span><span class='id identifier rubyid_destroy'><span class='object_link'><a href="#destroy-class_method" title="Datacentred::Model::User.destroy (method)">destroy</a></span></span> <span class='id identifier rubyid_id'>id</span>
+  <span class='kw'>true</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="save-instance_method">
+  
+    #<strong>save</strong>  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Save any attribute changes to this user.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Confirms that the changes are saved.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+69
+70
+71
+72</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/user.rb', line 69</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_save'>save</span>
+  <span class='const'><span class='object_link'><a href="" title="Datacentred::Model::User (class)">User</a></span></span><span class='period'>.</span><span class='id identifier rubyid_update'><span class='object_link'><a href="#update-class_method" title="Datacentred::Model::User.update (method)">update</a></span></span> <span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_to_h'>to_h</span>
+  <span class='kw'>true</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
 </div>
 
       <div id="footer">
-  Generated on Wed Sep 20 12:48:53 2017 by
+  Generated on Wed Sep 20 21:02:06 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.3.1).
 </div>

@@ -78,7 +78,7 @@ module Datacentred
       end
     end
 
-    def test_update_user
+    def test_update_user_class_method
       VCR.use_cassette('update_user') do
         @user = Datacentred::User.create(@create_params)
         @user = Datacentred::User.update(@user.id, @update_params)
@@ -86,12 +86,12 @@ module Datacentred
       end
     end
 
-    def test_raises_unprocessable_entity_if_failed_validation_for_update
-      VCR.use_cassette('user_update_failed_validation') do
-        @user = Datacentred::User.create(@create_params)
-        assert_raises(Datacentred::Errors::UnprocessableEntity) do
-          @user = Datacentred::User.update(@user.id, @short_password)
-        end
+    def test_update_user_instance_method
+      VCR.use_cassette('update_user_instance_method') do
+        @user = Datacentred::User.create(@create_params.merge(email: "death2@afterlife.com"))
+        @user.first_name = "Foo2"
+        @user.save
+        assert_equal User.find(@user.id).first_name, 'Foo2'
       end
     end
 
@@ -103,7 +103,7 @@ module Datacentred
       end
     end
 
-    def test_delete_user
+    def test_delete_user_class_method
       VCR.use_cassette('delete_user') do
         @user = Datacentred::User.create(@create_params)
         Datacentred::User.destroy(@user.id)
@@ -113,6 +113,16 @@ module Datacentred
       end
     end
 
+    def test_delete_user_instance_method
+      VCR.use_cassette('delete_user') do
+        @user = Datacentred::User.create(@create_params)
+        @user.destroy
+        assert_raises(Datacentred::Errors::NotFound) do
+          @user = Datacentred::User.find(@user.id)
+        end
+      end
+    end
+    
     def test_raises_unprocessable_entity_if_failed_validation_for_delete
       VCR.use_cassette('user_delete_failed_validation') do
         assert_raises(Datacentred::Errors::UnprocessableEntity) do

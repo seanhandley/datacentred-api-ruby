@@ -393,7 +393,7 @@ corresponding project in OpenStack&#39;s identity service (Keystone).</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Find a project by unique ID.</p>
+<p>The project, if it exists.</p>
 </div></span>
   
 </li>
@@ -451,6 +451,135 @@ corresponding project in OpenStack&#39;s identity service (Keystone).</p>
   <span class="summary_signature">
     
       <a href="#users-class_method" title="users (class method)">.<strong>users</strong>(id)  &#x21d2; [User] </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>List all users assigned to this project.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_user-instance_method" title="#add_user (instance method)">#<strong>add_user</strong>(user)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Add new user to this project.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#destroy-instance_method" title="#destroy (instance method)">#<strong>destroy</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Destroy this project.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#remove_user-instance_method" title="#remove_user (instance method)">#<strong>remove_user</strong>(user)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Remove user from this project.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#save-instance_method" title="#save (instance method)">#<strong>save</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Save any attribute changes to this project.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#users-instance_method" title="#users (instance method)">#<strong>users</strong>  &#x21d2; [User] </a>
     
 
     
@@ -898,20 +1027,6 @@ corresponding project in OpenStack&#39;s identity service (Keystone).</p>
       
     </li>
   
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/Unauthorized.html" title="Datacentred::Errors::Unauthorized (class)">Errors::Unauthorized</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if credentials aren&#39;t valid.</p>
-</div>
-      
-    </li>
-  
 </ul>
 
 </div><table class="source_code">
@@ -920,13 +1035,13 @@ corresponding project in OpenStack&#39;s identity service (Keystone).</p>
       <pre class="lines">
 
 
-89
-90
-91
-92</pre>
+83
+84
+85
+86</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred/model/project.rb', line 89</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/project.rb', line 83</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_user'>add_user</span><span class='lparen'>(</span><span class='label'>project_id:</span><span class='comma'>,</span> <span class='label'>user_id:</span><span class='rparen'>)</span>
   <span class='const'><span class='object_link'><a href="../Request.html" title="Datacentred::Request (module)">Request</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Request/Projects.html" title="Datacentred::Request::Projects (class)">Projects</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_user'><span class='object_link'><a href="../Request/Projects.html#add_user-class_method" title="Datacentred::Request::Projects.add_user (method)">add_user</a></span></span> <span class='id identifier rubyid_project_id'>project_id</span><span class='comma'>,</span> <span class='id identifier rubyid_user_id'>user_id</span>
@@ -974,24 +1089,6 @@ corresponding project in OpenStack&#39;s identity service (Keystone).</p>
     </li>
   
 </ul>
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/Unauthorized.html" title="Datacentred::Errors::Unauthorized (class)">Errors::Unauthorized</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if credentials aren&#39;t valid.</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -999,12 +1096,12 @@ corresponding project in OpenStack&#39;s identity service (Keystone).</p>
       <pre class="lines">
 
 
-33
-34
-35</pre>
+31
+32
+33</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred/model/project.rb', line 33</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/project.rb', line 31</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_all'>all</span>
   <span class='const'><span class='object_link'><a href="../Request.html" title="Datacentred::Request (module)">Request</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Request/Projects.html" title="Datacentred::Request::Projects (class)">Projects</a></span></span><span class='period'>.</span><span class='id identifier rubyid_list'><span class='object_link'><a href="../Request/Projects.html#list-class_method" title="Datacentred::Request::Projects.list (method)">list</a></span></span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_project'>project</span><span class='op'>|</span> <span class='id identifier rubyid_new'>new</span> <span class='id identifier rubyid_project'>project</span> <span class='rbrace'>}</span>
@@ -1088,20 +1185,6 @@ corresponding project in OpenStack&#39;s identity service (Keystone).</p>
       
     </li>
   
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/Unauthorized.html" title="Datacentred::Errors::Unauthorized (class)">Errors::Unauthorized</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if credentials aren&#39;t valid.</p>
-</div>
-      
-    </li>
-  
 </ul>
 
 </div><table class="source_code">
@@ -1110,12 +1193,12 @@ corresponding project in OpenStack&#39;s identity service (Keystone).</p>
       <pre class="lines">
 
 
+24
 25
-26
-27</pre>
+26</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred/model/project.rb', line 25</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/project.rb', line 24</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_new'>new</span> <span class='const'><span class='object_link'><a href="../Request.html" title="Datacentred::Request (module)">Request</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Request/Projects.html" title="Datacentred::Request::Projects (class)">Projects</a></span></span><span class='period'>.</span><span class='id identifier rubyid_create'><span class='object_link'><a href="../Request/Projects.html#create-class_method" title="Datacentred::Request::Projects.create (method)">create</a></span></span> <span class='id identifier rubyid_params'>params</span>
@@ -1213,20 +1296,6 @@ corresponding project in OpenStack&#39;s identity service (Keystone).</p>
       
     </li>
   
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/Unauthorized.html" title="Datacentred::Errors::Unauthorized (class)">Errors::Unauthorized</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if credentials aren&#39;t valid.</p>
-</div>
-      
-    </li>
-  
 </ul>
 
 </div><table class="source_code">
@@ -1235,13 +1304,13 @@ corresponding project in OpenStack&#39;s identity service (Keystone).</p>
       <pre class="lines">
 
 
-68
-69
-70
-71</pre>
+64
+65
+66
+67</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred/model/project.rb', line 68</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/project.rb', line 64</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_destroy'>destroy</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
   <span class='const'><span class='object_link'><a href="../Request.html" title="Datacentred::Request (module)">Request</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Request/Projects.html" title="Datacentred::Request::Projects (class)">Projects</a></span></span><span class='period'>.</span><span class='id identifier rubyid_destroy'><span class='object_link'><a href="../Request/Projects.html#destroy-class_method" title="Datacentred::Request::Projects.destroy (method)">destroy</a></span></span> <span class='id identifier rubyid_id'>id</span>
@@ -1264,33 +1333,13 @@ corresponding project in OpenStack&#39;s identity service (Keystone).</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Find a project by unique ID.</p>
+<p>Returns The project, if it exists.</p>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>id</span>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The unique identifier for this project.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
@@ -1315,20 +1364,6 @@ corresponding project in OpenStack&#39;s identity service (Keystone).</p>
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/Unauthorized.html" title="Datacentred::Errors::Unauthorized (class)">Errors::Unauthorized</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if credentials aren&#39;t valid.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-      
         <span class='type'>(<tt><span class='object_link'><a href="../Errors/NotFound.html" title="Datacentred::Errors::NotFound (class)">Errors::NotFound</a></span></tt>)</span>
       
       
@@ -1348,12 +1383,12 @@ corresponding project in OpenStack&#39;s identity service (Keystone).</p>
       <pre class="lines">
 
 
-43
-44
-45</pre>
+41
+42
+43</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred/model/project.rb', line 43</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/project.rb', line 41</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_new'>new</span> <span class='const'><span class='object_link'><a href="../Request.html" title="Datacentred::Request (module)">Request</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Request/Projects.html" title="Datacentred::Request::Projects (class)">Projects</a></span></span><span class='period'>.</span><span class='id identifier rubyid_show'><span class='object_link'><a href="../Request/Projects.html#show-class_method" title="Datacentred::Request::Projects.show (method)">show</a></span></span> <span class='id identifier rubyid_id'>id</span>
@@ -1453,20 +1488,6 @@ corresponding project in OpenStack&#39;s identity service (Keystone).</p>
       
     </li>
   
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/Unauthorized.html" title="Datacentred::Errors::Unauthorized (class)">Errors::Unauthorized</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if credentials aren&#39;t valid.</p>
-</div>
-      
-    </li>
-  
 </ul>
 
 </div><table class="source_code">
@@ -1475,13 +1496,13 @@ corresponding project in OpenStack&#39;s identity service (Keystone).</p>
       <pre class="lines">
 
 
-101
-102
-103
-104</pre>
+94
+95
+96
+97</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred/model/project.rb', line 101</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/project.rb', line 94</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_remove_user'>remove_user</span><span class='lparen'>(</span><span class='label'>project_id:</span><span class='comma'>,</span> <span class='label'>user_id:</span><span class='rparen'>)</span>
   <span class='const'><span class='object_link'><a href="../Request.html" title="Datacentred::Request (module)">Request</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Request/Projects.html" title="Datacentred::Request::Projects (class)">Projects</a></span></span><span class='period'>.</span><span class='id identifier rubyid_remove_user'><span class='object_link'><a href="../Request/Projects.html#remove_user-class_method" title="Datacentred::Request::Projects.remove_user (method)">remove_user</a></span></span> <span class='id identifier rubyid_project_id'>project_id</span><span class='comma'>,</span> <span class='id identifier rubyid_user_id'>user_id</span>
@@ -1596,20 +1617,6 @@ corresponding project in OpenStack&#39;s identity service (Keystone).</p>
       
     </li>
   
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/Unauthorized.html" title="Datacentred::Errors::Unauthorized (class)">Errors::Unauthorized</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Raised if credentials aren&#39;t valid.</p>
-</div>
-      
-    </li>
-  
 </ul>
 
 </div><table class="source_code">
@@ -1618,12 +1625,12 @@ corresponding project in OpenStack&#39;s identity service (Keystone).</p>
       <pre class="lines">
 
 
-56
-57
-58</pre>
+53
+54
+55</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred/model/project.rb', line 56</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/project.rb', line 53</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_new'>new</span> <span class='const'><span class='object_link'><a href="../Request.html" title="Datacentred::Request (module)">Request</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Request/Projects.html" title="Datacentred::Request::Projects (class)">Projects</a></span></span><span class='period'>.</span><span class='id identifier rubyid_update'><span class='object_link'><a href="../Request/Projects.html#update-class_method" title="Datacentred::Request::Projects.update (method)">update</a></span></span> <span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span>
@@ -1690,19 +1697,86 @@ corresponding project in OpenStack&#39;s identity service (Keystone).</p>
     </li>
   
 </ul>
-<p class="tag_title">Raises:</p>
-<ul class="raise">
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+73
+74
+75</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/project.rb', line 73</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_users'>users</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="../Request.html" title="Datacentred::Request (module)">Request</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Request/Projects.html" title="Datacentred::Request::Projects (class)">Projects</a></span></span><span class='period'>.</span><span class='id identifier rubyid_list_users'><span class='object_link'><a href="../Request/Projects.html#list_users-class_method" title="Datacentred::Request::Projects.list_users (method)">list_users</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_user'>user</span><span class='op'>|</span> <span class='id identifier rubyid_new'>new</span> <span class='id identifier rubyid_user'>user</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="add_user-instance_method">
+  
+    #<strong>add_user</strong>(user)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Add new user to this project.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
     <li>
       
+        <span class='name'>user</span>
       
-        <span class='type'>(<tt><span class='object_link'><a href="../Errors/Unauthorized.html" title="Datacentred::Errors::Unauthorized (class)">Errors::Unauthorized</a></span></tt>)</span>
+      
+        <span class='type'>(<tt><span class='object_link'><a href="User.html" title="Datacentred::Model::User (class)">User</a></span></tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>Raised if credentials aren&#39;t valid.</p>
+<p>The user model to add.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Confirms that user was added (or is already present).</p>
 </div>
       
     </li>
@@ -1715,15 +1789,275 @@ corresponding project in OpenStack&#39;s identity service (Keystone).</p>
       <pre class="lines">
 
 
-78
-79
-80</pre>
+127
+128
+129</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred/model/project.rb', line 78</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/project.rb', line 127</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_users'>users</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="../Request.html" title="Datacentred::Request (module)">Request</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Request/Projects.html" title="Datacentred::Request::Projects (class)">Projects</a></span></span><span class='period'>.</span><span class='id identifier rubyid_list_users'><span class='object_link'><a href="../Request/Projects.html#list_users-class_method" title="Datacentred::Request::Projects.list_users (method)">list_users</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_user'>user</span><span class='op'>|</span> <span class='id identifier rubyid_new'>new</span> <span class='id identifier rubyid_user'>user</span> <span class='rbrace'>}</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_add_user'>add_user</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="" title="Datacentred::Model::Project (class)">Project</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_user'><span class='object_link'><a href="#add_user-class_method" title="Datacentred::Model::Project.add_user (method)">add_user</a></span></span> <span class='label'>project_id:</span> <span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>user_id:</span> <span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="destroy-instance_method">
+  
+    #<strong>destroy</strong>  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Destroy this project.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Confirms that the project is destroyed.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+111
+112
+113
+114</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/project.rb', line 111</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_destroy'>destroy</span>
+  <span class='const'><span class='object_link'><a href="" title="Datacentred::Model::Project (class)">Project</a></span></span><span class='period'>.</span><span class='id identifier rubyid_destroy'><span class='object_link'><a href="#destroy-class_method" title="Datacentred::Model::Project.destroy (method)">destroy</a></span></span> <span class='id identifier rubyid_id'>id</span>
+  <span class='kw'>true</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="remove_user-instance_method">
+  
+    #<strong>remove_user</strong>(user)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Remove user from this project.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>user</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="User.html" title="Datacentred::Model::User (class)">User</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The user model to remove.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Confirms that user was removed (or is already absent).</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+135
+136
+137</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/project.rb', line 135</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_remove_user'>remove_user</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="" title="Datacentred::Model::Project (class)">Project</a></span></span><span class='period'>.</span><span class='id identifier rubyid_remove_user'><span class='object_link'><a href="#remove_user-class_method" title="Datacentred::Model::Project.remove_user (method)">remove_user</a></span></span> <span class='label'>project_id:</span> <span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>user_id:</span> <span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="save-instance_method">
+  
+    #<strong>save</strong>  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Save any attribute changes to this project.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Confirms that the changes are saved.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+103
+104
+105
+106</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/project.rb', line 103</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_save'>save</span>
+  <span class='const'><span class='object_link'><a href="" title="Datacentred::Model::Project (class)">Project</a></span></span><span class='period'>.</span><span class='id identifier rubyid_update'><span class='object_link'><a href="#update-class_method" title="Datacentred::Model::Project.update (method)">update</a></span></span> <span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_to_h'>to_h</span>
+  <span class='kw'>true</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="users-instance_method">
+  
+    #<strong>users</strong>  &#x21d2; <tt>[<span class='object_link'><a href="User.html" title="Datacentred::Model::User (class)">User</a></span>]</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>List all users assigned to this project.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>[<span class='object_link'><a href="User.html" title="Datacentred::Model::User (class)">User</a></span>]</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A collection of the project&#39;s users.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+119
+120
+121</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/project.rb', line 119</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_users'>users</span>
+  <span class='const'><span class='object_link'><a href="" title="Datacentred::Model::Project (class)">Project</a></span></span><span class='period'>.</span><span class='id identifier rubyid_users'><span class='object_link'><a href="#users-class_method" title="Datacentred::Model::Project.users (method)">users</a></span></span> <span class='id identifier rubyid_id'>id</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1735,7 +2069,7 @@ corresponding project in OpenStack&#39;s identity service (Keystone).</p>
 </div>
 
       <div id="footer">
-  Generated on Wed Sep 20 12:48:53 2017 by
+  Generated on Wed Sep 20 21:02:07 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.3.1).
 </div>

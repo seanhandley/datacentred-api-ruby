@@ -13,7 +13,6 @@ module Datacentred
       # @param [Integer] month The month.
       # @raise [Errors::NotFound] Raised if no usage data found for
       #   given year/month pair.
-      # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
       # @return [Usage] Usage for given year/month pair.
       def self.find(year, month)
         new Request::Usage.show year, month
