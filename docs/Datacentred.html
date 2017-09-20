@@ -79,7 +79,7 @@
   <dl>
     <dt>Defined in:</dt>
     <dd>lib/datacentred.rb<span class="defines">,<br />
-  lib/datacentred/error.rb,<br /> lib/datacentred/response.rb,<br /> lib/datacentred/model/base.rb,<br /> lib/datacentred/model/role.rb,<br /> lib/datacentred/model/user.rb,<br /> lib/datacentred/model/usage.rb,<br /> lib/datacentred/request/base.rb,<br /> lib/datacentred/model/project.rb,<br /> lib/datacentred/model/version.rb,<br /> lib/datacentred/request/roles.rb,<br /> lib/datacentred/request/usage.rb,<br /> lib/datacentred/request/users.rb,<br /> lib/datacentred/request/projects.rb,<br /> lib/datacentred/request/versions.rb</span>
+  lib/datacentred/error.rb,<br /> lib/datacentred/response.rb,<br /> lib/datacentred/model/base.rb,<br /> lib/datacentred/model/role.rb,<br /> lib/datacentred/model/user.rb,<br /> lib/datacentred/model/usage.rb,<br /> lib/datacentred/request/base.rb,<br /> lib/datacentred/model/project.rb,<br /> lib/datacentred/request/roles.rb,<br /> lib/datacentred/request/usage.rb,<br /> lib/datacentred/request/users.rb,<br /> lib/datacentred/request/projects.rb,<br /> lib/datacentred/request/versions.rb</span>
 </dd>
   </dl>
   
@@ -106,7 +106,7 @@
     
   
     
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Datacentred/Project.html" title="Datacentred::Project (class)">Project</a></span>, <span class='object_link'><a href="Datacentred/Response.html" title="Datacentred::Response (class)">Response</a></span>, <span class='object_link'><a href="Datacentred/Role.html" title="Datacentred::Role (class)">Role</a></span>, <span class='object_link'><a href="Datacentred/Usage.html" title="Datacentred::Usage (class)">Usage</a></span>, <span class='object_link'><a href="Datacentred/User.html" title="Datacentred::User (class)">User</a></span>, <span class='object_link'><a href="Datacentred/Version.html" title="Datacentred::Version (class)">Version</a></span>
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Datacentred/Project.html" title="Datacentred::Project (class)">Project</a></span>, <span class='object_link'><a href="Datacentred/Response.html" title="Datacentred::Response (class)">Response</a></span>, <span class='object_link'><a href="Datacentred/Role.html" title="Datacentred::Role (class)">Role</a></span>, <span class='object_link'><a href="Datacentred/Usage.html" title="Datacentred::Usage (class)">Usage</a></span>, <span class='object_link'><a href="Datacentred/User.html" title="Datacentred::User (class)">User</a></span>
     
   
 </p>
@@ -280,12 +280,12 @@ href="https://my.datacentred.io">my.datacentred.io</a></p>
       <pre class="lines">
 
 
-34
-35
-36</pre>
+32
+33
+34</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred.rb', line 34</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred.rb', line 32</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_access_key'>access_key</span>
   <span class='ivar'>@access_key</span> <span class='op'>||=</span> <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>DATACENTRED_ACCESS</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
@@ -361,12 +361,12 @@ href="https://my.datacentred.io">my.datacentred.io</a></p>
       <pre class="lines">
 
 
-44
-45
-46</pre>
+42
+43
+44</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred.rb', line 44</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred.rb', line 42</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_access_key='>access_key=</span><span class='lparen'>(</span><span class='id identifier rubyid_new_access_key'>new_access_key</span><span class='rparen'>)</span>
   <span class='ivar'>@access_key</span> <span class='op'>=</span> <span class='id identifier rubyid_new_access_key'>new_access_key</span>
@@ -426,12 +426,12 @@ href="https://my.datacentred.io">my.datacentred.io</a></p>
       <pre class="lines">
 
 
-57
-58
-59</pre>
+55
+56
+57</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred.rb', line 57</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred.rb', line 55</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_secret_key'>secret_key</span>
   <span class='ivar'>@secret_key</span> <span class='op'>||=</span> <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>DATACENTRED_SECRET</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
@@ -507,12 +507,12 @@ href="https://my.datacentred.io">my.datacentred.io</a></p>
       <pre class="lines">
 
 
-68
-69
-70</pre>
+66
+67
+68</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred.rb', line 68</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred.rb', line 66</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_secret_key='>secret_key=</span><span class='lparen'>(</span><span class='id identifier rubyid_new_secret_key'>new_secret_key</span><span class='rparen'>)</span>
   <span class='ivar'>@secret_key</span> <span class='op'>=</span> <span class='id identifier rubyid_new_secret_key'>new_secret_key</span>
@@ -527,7 +527,7 @@ href="https://my.datacentred.io">my.datacentred.io</a></p>
 </div>
 
       <div id="footer">
-  Generated on Fri Sep 15 19:34:57 2017 by
+  Generated on Wed Sep 20 12:48:52 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.3.1).
 </div>

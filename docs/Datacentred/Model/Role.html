@@ -566,12 +566,12 @@ then assigning those roles to users.</p>
       <pre class="lines">
 
 
-13
 14
-15</pre>
+15
+16</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 13</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 14</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_admin'>admin</span>
   <span class='ivar'>@admin</span>
@@ -627,12 +627,12 @@ then assigning those roles to users.</p>
       <pre class="lines">
 
 
-13
 14
-15</pre>
+15
+16</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 13</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 14</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_created_at'>created_at</span>
   <span class='ivar'>@created_at</span>
@@ -688,12 +688,12 @@ then assigning those roles to users.</p>
       <pre class="lines">
 
 
-13
 14
-15</pre>
+15
+16</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 13</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 14</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_id'>id</span>
   <span class='ivar'>@id</span>
@@ -749,12 +749,12 @@ then assigning those roles to users.</p>
       <pre class="lines">
 
 
-13
 14
-15</pre>
+15
+16</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 13</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 14</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_name'>name</span>
   <span class='ivar'>@name</span>
@@ -810,12 +810,12 @@ then assigning those roles to users.</p>
       <pre class="lines">
 
 
-13
 14
-15</pre>
+15
+16</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 13</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 14</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_permissions'>permissions</span>
   <span class='ivar'>@permissions</span>
@@ -871,12 +871,12 @@ then assigning those roles to users.</p>
       <pre class="lines">
 
 
-13
 14
-15</pre>
+15
+16</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 13</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 14</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_updated_at'>updated_at</span>
   <span class='ivar'>@updated_at</span>
@@ -1005,13 +1005,13 @@ then assigning those roles to users.</p>
       <pre class="lines">
 
 
-85
-86
 87
-88</pre>
+88
+89
+90</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 85</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 87</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_user'>add_user</span><span class='lparen'>(</span><span class='label'>role_id:</span><span class='comma'>,</span> <span class='label'>user_id:</span><span class='rparen'>)</span>
   <span class='const'><span class='object_link'><a href="../Request.html" title="Datacentred::Request (module)">Request</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Request/Roles.html" title="Datacentred::Request::Roles (class)">Roles</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_user'><span class='object_link'><a href="../Request/Roles.html#add_user-class_method" title="Datacentred::Request::Roles.add_user (method)">add_user</a></span></span> <span class='id identifier rubyid_role_id'>role_id</span><span class='comma'>,</span> <span class='id identifier rubyid_user_id'>user_id</span>
@@ -1084,12 +1084,12 @@ then assigning those roles to users.</p>
       <pre class="lines">
 
 
-29
-30
-31</pre>
+31
+32
+33</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 29</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 31</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_all'>all</span>
   <span class='const'><span class='object_link'><a href="../Request.html" title="Datacentred::Request (module)">Request</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Request/Roles.html" title="Datacentred::Request::Roles (class)">Roles</a></span></span><span class='period'>.</span><span class='id identifier rubyid_list'><span class='object_link'><a href="../Request/Roles.html#list-class_method" title="Datacentred::Request::Roles.list (method)">list</a></span></span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_role'>role</span><span class='op'>|</span> <span class='id identifier rubyid_new'>new</span> <span class='id identifier rubyid_role'>role</span> <span class='rbrace'>}</span>
@@ -1195,12 +1195,12 @@ then assigning those roles to users.</p>
       <pre class="lines">
 
 
-21
-22
-23</pre>
+23
+24
+25</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 23</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_new'>new</span> <span class='const'><span class='object_link'><a href="../Request.html" title="Datacentred::Request (module)">Request</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Request/Roles.html" title="Datacentred::Request::Roles (class)">Roles</a></span></span><span class='period'>.</span><span class='id identifier rubyid_create'><span class='object_link'><a href="../Request/Roles.html#create-class_method" title="Datacentred::Request::Roles.create (method)">create</a></span></span> <span class='id identifier rubyid_params'>params</span>
@@ -1320,13 +1320,13 @@ then assigning those roles to users.</p>
       <pre class="lines">
 
 
-64
-65
 66
-67</pre>
+67
+68
+69</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 64</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 66</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_destroy'>destroy</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
   <span class='const'><span class='object_link'><a href="../Request.html" title="Datacentred::Request (module)">Request</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Request/Roles.html" title="Datacentred::Request::Roles (class)">Roles</a></span></span><span class='period'>.</span><span class='id identifier rubyid_destroy'><span class='object_link'><a href="../Request/Roles.html#destroy-class_method" title="Datacentred::Request::Roles.destroy (method)">destroy</a></span></span> <span class='id identifier rubyid_id'>id</span>
@@ -1433,12 +1433,12 @@ then assigning those roles to users.</p>
       <pre class="lines">
 
 
-39
-40
-41</pre>
+41
+42
+43</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 39</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 41</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_new'>new</span> <span class='const'><span class='object_link'><a href="../Request.html" title="Datacentred::Request (module)">Request</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Request/Roles.html" title="Datacentred::Request::Roles (class)">Roles</a></span></span><span class='period'>.</span><span class='id identifier rubyid_show'><span class='object_link'><a href="../Request/Roles.html#show-class_method" title="Datacentred::Request::Roles.show (method)">show</a></span></span> <span class='id identifier rubyid_id'>id</span>
@@ -1560,13 +1560,13 @@ then assigning those roles to users.</p>
       <pre class="lines">
 
 
-97
-98
 99
-100</pre>
+100
+101
+102</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 97</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 99</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_remove_user'>remove_user</span><span class='lparen'>(</span><span class='label'>role_id:</span><span class='comma'>,</span> <span class='label'>user_id:</span><span class='rparen'>)</span>
   <span class='const'><span class='object_link'><a href="../Request.html" title="Datacentred::Request (module)">Request</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Request/Roles.html" title="Datacentred::Request::Roles (class)">Roles</a></span></span><span class='period'>.</span><span class='id identifier rubyid_remove_user'><span class='object_link'><a href="../Request/Roles.html#remove_user-class_method" title="Datacentred::Request::Roles.remove_user (method)">remove_user</a></span></span> <span class='id identifier rubyid_role_id'>role_id</span><span class='comma'>,</span> <span class='id identifier rubyid_user_id'>user_id</span>
@@ -1703,12 +1703,12 @@ then assigning those roles to users.</p>
       <pre class="lines">
 
 
-52
-53
-54</pre>
+54
+55
+56</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 52</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 54</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_new'>new</span> <span class='const'><span class='object_link'><a href="../Request.html" title="Datacentred::Request (module)">Request</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Request/Roles.html" title="Datacentred::Request::Roles (class)">Roles</a></span></span><span class='period'>.</span><span class='id identifier rubyid_update'><span class='object_link'><a href="../Request/Roles.html#update-class_method" title="Datacentred::Request::Roles.update (method)">update</a></span></span> <span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span>
@@ -1800,12 +1800,12 @@ then assigning those roles to users.</p>
       <pre class="lines">
 
 
-74
-75
-76</pre>
+76
+77
+78</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 74</span>
+      <pre class="code"><span class="info file"># File 'lib/datacentred/model/role.rb', line 76</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_users'>users</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
   <span class='const'><span class='object_link'><a href="../Request.html" title="Datacentred::Request (module)">Request</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Request/Roles.html" title="Datacentred::Request::Roles (class)">Roles</a></span></span><span class='period'>.</span><span class='id identifier rubyid_list_users'><span class='object_link'><a href="../Request/Roles.html#list_users-class_method" title="Datacentred::Request::Roles.list_users (method)">list_users</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_user'>user</span><span class='op'>|</span> <span class='id identifier rubyid_new'>new</span> <span class='id identifier rubyid_user'>user</span> <span class='rbrace'>}</span>
@@ -1820,7 +1820,7 @@ then assigning those roles to users.</p>
 </div>
 
       <div id="footer">
-  Generated on Fri Sep 15 19:34:57 2017 by
+  Generated on Wed Sep 20 12:48:52 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.3.1).
 </div>

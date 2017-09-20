@@ -13,13 +13,11 @@ module Datacentred
   require_relative 'datacentred/model/role'
   require_relative 'datacentred/model/usage'
   require_relative 'datacentred/model/user'
-  require_relative 'datacentred/model/version'
   require_relative 'datacentred/request/base'
   require_relative 'datacentred/request/projects'
   require_relative 'datacentred/request/roles'
   require_relative 'datacentred/request/usage'
   require_relative 'datacentred/request/users'
-  require_relative 'datacentred/request/versions'
   require_relative 'datacentred/response'
 
   # Access key credential for the DataCentred API.
@@ -84,10 +82,6 @@ module Datacentred
   # Shorthand alias for {Model::User}
   # @see Model::User
   class User < Model::User; end
-
-  # Shorthand alias for {Model::Version}
-  # @see Model::Version
-  class Version < Model::Version; end
 
   # Model classes representing RESTful API entities.
   module Model; end
