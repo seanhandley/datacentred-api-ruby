@@ -133,9 +133,15 @@
 <ul>
 <li><code>.all</code> - returns an index of all entities of this type.</li>
 <li><code>.create params</code> - creates a new entity where <code>params</code> is a hash of properties.</li>
-<li><code>.update id, params</code> - updates the entity identified by <code>id</code> with the hash of properties defined by <code>params</code>.</li>
 <li><code>.find id</code> - finds the entity via the unique identifier <code>id</code>.</li>
-<li><code>.destroy id</code> - removes the entity via the unique identifier <code>id</code>.</li>
+</ul>
+
+<p>returned objects can be edited and deleted:</p>
+
+<ul>
+<li><code>object.name = &quot;Foo&quot;</code> - changes the <code>name</code> property to <code>Foo</code>.</li>
+<li><code>object.save</code> - saves any object changes so they persist on the server.</li>
+<li><code>object.destroy</code> - removes the object from the server.</li>
 </ul>
 
 <p>Here are some worked examples:</p>
@@ -148,13 +154,15 @@
 
 <h3>Find a user by id</h3>
 
-<pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="Datacentred.html" title="Datacentred (module)">Datacentred</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Datacentred/User.html" title="Datacentred::User (class)">User</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>2bd21ee25cde40fdb9454954e4fbb4b5</span><span class='tstring_end'>&quot;</span></span>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_user'>user</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Datacentred.html" title="Datacentred (module)">Datacentred</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Datacentred/User.html" title="Datacentred::User (class)">User</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>2bd21ee25cde40fdb9454954e4fbb4b5</span><span class='tstring_end'>&quot;</span></span>
 <span class='comment'># =&gt; #&lt;Datacentred::Model::User id=&quot;2bd21ee25cde40fdb9454954e4fbb4b5&quot;, ...&gt;
 </span></code></pre>
 
 <h3>Update a project</h3>
 
-<pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="Datacentred.html" title="Datacentred (module)">Datacentred</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Datacentred/Project.html" title="Datacentred::Project (class)">Project</a></span></span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>6d5277716c4b10d2177814af50b77175</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Foo</span><span class='tstring_end'>&quot;</span></span>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_project'>project</span>      <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Datacentred.html" title="Datacentred (module)">Datacentred</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Datacentred/Project.html" title="Datacentred::Project (class)">Project</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>6d5277716c4b10d2177814af50b77175</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_project'>project</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Foo</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_project'>project</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span>
 <span class='comment'># =&gt; #&lt;Datacentred::Model::Project id=&quot;6d5277716c4b10d2177814af50b77175&quot;, name= &quot;Foo&quot;, ...&gt;
 </span></code></pre>
 
@@ -162,19 +170,23 @@
 
 <p>Acceptable permissions are: &#39;api.read&#39;, &#39;cloud.read&#39;, &#39;roles.modify&#39;, &#39;roles.read&#39;, &#39;storage.read&#39;, &#39;tickets.modify&#39;, &#39;usage.read&#39;.</p>
 
-<pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="Datacentred.html" title="Datacentred (module)">Datacentred</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Datacentred/Role.html" title="Datacentred::Role (class)">Role</a></span></span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span> <span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>foo</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>permissions:</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>usage.read</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_role'>role</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Datacentred.html" title="Datacentred (module)">Datacentred</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Datacentred/Role.html" title="Datacentred::Role (class)">Role</a></span></span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span> <span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>foo</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>permissions:</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>usage.read</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
 <span class='comment'># =&gt; #&lt;Datacentred::Model::Role id=&quot;654f423e-646a-4742-849d-d8c9ab9b4f39&quot;, name=&quot;foo&quot;, admin=false, permissions=[&quot;usage.read&quot;] ...&gt;
 </span></code></pre>
 
 <h3>Add a user to a role</h3>
 
-<pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="Datacentred.html" title="Datacentred (module)">Datacentred</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Datacentred/Role.html" title="Datacentred::Role (class)">Role</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_user'>add_user</span> <span class='label'>role_id:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>654f423e-646a-4742-849d-d8c9ab9b4f39</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>user_id:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>2bd21ee25cde40fdb9454954e4fbb4b5</span><span class='tstring_end'>&quot;</span></span>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_role'>role</span> <span class='op'>=</span> <span class='const'>Dataentred</span><span class='op'>::</span><span class='const'>Role</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span>  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>654f423e-646a-4742-849d-d8c9ab9b4f39</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_user'>user</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Datacentred.html" title="Datacentred (module)">Datacentred</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Datacentred/User.html" title="Datacentred::User (class)">User</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>2bd21ee25cde40fdb9454954e4fbb4b5</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_role'>role</span><span class='period'>.</span><span class='id identifier rubyid_add_user'>add_user</span> <span class='id identifier rubyid_user'>user</span>
 <span class='comment'># =&gt; true
 </span></code></pre>
 
 <h3>Remove a user from a project</h3>
 
-<pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="Datacentred.html" title="Datacentred (module)">Datacentred</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Datacentred/Project.html" title="Datacentred::Project (class)">Project</a></span></span><span class='period'>.</span><span class='id identifier rubyid_remove_user'>remove_user</span> <span class='label'>project_id:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>6d5277716c4b10d2177814af50b77175</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>user_id:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>2bd21ee25cde40fdb9454954e4fbb4b5</span><span class='tstring_end'>&quot;</span></span>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_user'>user</span>    <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Datacentred.html" title="Datacentred (module)">Datacentred</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Datacentred/User.html" title="Datacentred::User (class)">User</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span>    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>2bd21ee25cde40fdb9454954e4fbb4b5</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_project'>project</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Datacentred.html" title="Datacentred (module)">Datacentred</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Datacentred/Project.html" title="Datacentred::Project (class)">Project</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>6d5277716c4b10d2177814af50b77175</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_project'>project</span><span class='period'>.</span><span class='id identifier rubyid_remove_user'>remove_user</span> <span class='id identifier rubyid_user'>user</span>
 <span class='comment'># =&gt; true
 </span></code></pre>
 
@@ -210,7 +222,7 @@
 </div></div>
 
       <div id="footer">
-  Generated on Wed Sep 20 12:48:52 2017 by
+  Generated on Wed Sep 20 21:02:05 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.3.1).
 </div>

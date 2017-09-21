@@ -10,7 +10,6 @@ module Datacentred
                                             'roles.modify', 'roles.read']}
       @invalid_permissions = {name: "Genghis Khan",
                               permissions: ["fighting"]}
-      @update_params       = {name: "Administrator 2"}
       @user_id             = "06eacbafda355a927f50f304db3af132"
     end
 
@@ -55,12 +54,22 @@ module Datacentred
       end
     end
 
-    def test_update_role
+    def test_update_role_with_class_method
       VCR.use_cassette('update_role') do
         @role = Datacentred::Role.create(@create_params1)
         assert_equal @role.name, 'New Role'
-        @updated_role = Datacentred::Role.update(@role.id, @update_params)
+        @updated_role = Datacentred::Role.update(@role.id, {name: "Administrator 2"})
         assert_equal @updated_role.name, 'Administrator 2'
+      end
+    end
+
+    def test_update_role_with_instance_method
+      VCR.use_cassette('update_role_instance_method') do
+        @role = Datacentred::Role.create(@create_params1)
+        assert_equal @role.name, 'New Role'
+        @role.name = "Administrator 2"
+        @role.save
+        assert_equal 'Administrator 2', Datacentred::Role.find(@role.id).name
       end
     end
 
@@ -73,18 +82,29 @@ module Datacentred
       end
     end
 
-    def test_delete_role
+    def test_delete_role_with_class_method
       VCR.use_cassette('delete_role') do
         @role = Datacentred::Role.create(@create_params1)
         assert Datacentred::Role.find(@role.id)
-        Datacentred::Role.destroy(@role.id)
+        assert_equal true, Datacentred::Role.destroy(@role.id)
         assert_raises(Datacentred::Errors::NotFound) do
           @role = Datacentred::Role.find(@role.id)
         end
       end
     end
 
-    def test_list_role_users
+    def test_delete_role_with_instance_method
+      VCR.use_cassette('delete_role') do
+        @role = Datacentred::Role.create(@create_params1)
+        assert Datacentred::Role.find(@role.id)
+        assert_equal true, @role.destroy
+        assert_raises(Datacentred::Errors::NotFound) do
+          @role = Datacentred::Role.find(@role.id)
+        end
+      end
+    end
+
+    def test_list_role_users_class_method
       VCR.use_cassette('list_role_users') do
         @role = Datacentred::Role.create(@create_params1)
         @user_list = Datacentred::Role.users(@role.id)
@@ -92,7 +112,14 @@ module Datacentred
       end
     end
 
-    def test_add_user_to_role
+    def test_list_role_users_instance_method
+      VCR.use_cassette('list_role_users') do
+        @role = Datacentred::Role.create(@create_params1)
+        assert_equal @role.users.count, 0
+      end
+    end
+
+    def test_add_user_to_role_class_method
       VCR.use_cassette('add_user_to_role') do
         @role = Datacentred::Role.create(@create_params1)
         @user_list = Datacentred::Role.users(@role.id)
@@ -104,7 +131,19 @@ module Datacentred
       end
     end
 
-    def test_remove_user_from_role
+    def test_add_user_to_role_instance_method
+      VCR.use_cassette('add_user_to_role_instance_method') do
+        @role = Datacentred::Role.create(@create_params1)
+        assert_equal @role.users.count, 0
+        @user = Datacentred::User.all.first
+        assert @role.add_user @user
+        @new_users_list = @role.users
+        assert_equal @new_users_list.count, 1
+        assert_equal @new_users_list.first.id, @user.id
+      end
+    end
+
+    def test_remove_user_from_role_class_method
       VCR.use_cassette('remove_user_from_role') do
         @role = Datacentred::Role.create(@create_params1)
         assert Datacentred::Role.add_user role_id: @role.id, user_id: @user_id
@@ -116,11 +155,31 @@ module Datacentred
       end
     end
 
-    def test_remove_user_from_role_not_found
+    def test_remove_user_from_role_instance_method
+      VCR.use_cassette('remove_user_from_role_instance_method') do
+        @role = Datacentred::Role.create(@create_params1)
+        @user = Datacentred::User.all.first
+        @role.add_user @user
+        assert_equal @role.users.count, 1
+        assert @role.remove_user @user
+        assert_equal @role.users.count, 0
+      end
+    end
+
+    def test_remove_user_from_role_not_found_class_method
       VCR.use_cassette('remove_user_from_role_not_found') do
         @role = Datacentred::Role.create(@create_params1)
         assert_raises(Datacentred::Errors::NotFound) do
           Datacentred::Role.remove_user role_id: @role.id, user_id: "unknown"
+        end
+      end
+    end
+
+    def test_remove_user_from_role_not_found_instance_method
+      VCR.use_cassette('remove_user_from_role_not_found') do
+        @role = Datacentred::Role.create(@create_params1)
+        assert_raises(Datacentred::Errors::NotFound) do
+          @role.remove_user Datacentred::User.new id: "unknown"
         end
       end
     end

@@ -20,7 +20,6 @@ module Datacentred
         # @param [Hash] params Project attributes
         # @raise [Errors::UnprocessableEntity] Raised if validations fail
         #   for the supplied attributes.
-        # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
         # @return [Project] New project.
         def create(params)
           new Request::Projects.create params
@@ -28,7 +27,6 @@ module Datacentred
 
         # List all available projects.
         #
-        # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
         # @return [[Project]] A collection of all projects on this account.
         def all
           Request::Projects.list.map { |project| new project }
@@ -37,7 +35,6 @@ module Datacentred
         # Find a project by unique ID.
         #
         # @param [String] id The unique identifier for this project.
-        # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
         # @raise [Errors::NotFound] Raised if the project couldn't be found.
         # @return [Project] The project, if it exists.
         def find(id)
@@ -51,7 +48,6 @@ module Datacentred
         # @raise [Errors::UnprocessableEntity] Raised if validations fail
         #   for the supplied attributes.
         # @raise [Errors::NotFound] Raised if the project could not be found.
-        # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
         # @return [Project] The updated project.
         def update(id, params)
           new Request::Projects.update id, params
@@ -63,7 +59,6 @@ module Datacentred
         # @raise [Errors::NotFound] Raised if the project couldn't be found.
         # @raise [Errors::UnprocessableEntity] Raised if validations fail
         #   for the specified project.
-        # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
         # @return [Boolean] Confirms the user was destroyed.
         def destroy(id)
           Request::Projects.destroy id
@@ -73,7 +68,6 @@ module Datacentred
         # List all users assigned to this project.
         #
         # @param [String] id The unique identifier for this project.
-        # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
         # @return [[User]] A collection of the project's users.
         def users(id)
           Request::Projects.list_users(id).map { |user| new user }
@@ -84,7 +78,6 @@ module Datacentred
         # @param [String] project_id The unique identifier for this project.
         # @param [String] user_id The unique identifier for this user.
         # @raise [Errors::NotFound] Raised if the project or user couldn't be found.
-        # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
         # @return [Boolean] Confirms the user was added (or is already present).
         def add_user(project_id:, user_id:)
           Request::Projects.add_user project_id, user_id
@@ -96,12 +89,50 @@ module Datacentred
         # @param [String] project_id The unique identifier for this project.
         # @param [String] user_id The unique identifier for this user.
         # @raise [Errors::NotFound] Raised if project or user couldn't be found.
-        # @raise [Errors::Unauthorized] Raised if credentials aren't valid.
         # @return [Boolean] Confirms that user was removed (or is already absent).
         def remove_user(project_id:, user_id:)
           Request::Projects.remove_user project_id, user_id
           true
         end
+      end # class << self
+
+      # Save any attribute changes to this project.
+      #
+      # @return [Boolean] Confirms that the changes are saved.
+      def save
+        Project.update id, to_h
+        true
+      end
+
+      # Destroy this project.
+      #
+      # @return [Boolean] Confirms that the project is destroyed.
+      def destroy
+        Project.destroy id
+        true
+      end
+
+      # List all users assigned to this project.
+      #
+      # @return [[User]] A collection of the project's users.
+      def users
+        Project.users id
+      end
+
+      # Add new user to this project.
+      #
+      # @param [User] user The user model to add.
+      # @return [Boolean] Confirms that user was added (or is already present).
+      def add_user(user)
+        Project.add_user project_id: id, user_id: user.id
+      end
+
+      # Remove user from this project.
+      #
+      # @param [User] user The user model to remove.
+      # @return [Boolean] Confirms that user was removed (or is already absent).
+      def remove_user(user)
+        Project.remove_user project_id: id, user_id: user.id
       end
     end
   end

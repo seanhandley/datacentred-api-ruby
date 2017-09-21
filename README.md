@@ -71,9 +71,13 @@ The `User`, `Project`, and `Role` entities all support CRUD operations via the f
 
 * `.all` - returns an index of all entities of this type.
 * `.create params` - creates a new entity where `params` is a hash of properties.
-* `.update id, params` - updates the entity identified by `id` with the hash of properties defined by `params`.
 * `.find id` - finds the entity via the unique identifier `id`.
-* `.destroy id` - removes the entity via the unique identifier `id`.
+
+returned objects can be edited and deleted:
+
+* `object.name = "Foo"` - changes the `name` property to `Foo`.
+* `object.save` - saves any object changes so they persist on the server.
+* `object.destroy` - removes the object from the server.
 
 Here are some worked examples:
 
@@ -87,14 +91,16 @@ Datacentred::User.all
 ### Find a user by id
 
 ```ruby
-Datacentred::User.find "2bd21ee25cde40fdb9454954e4fbb4b5"
+user = Datacentred::User.find "2bd21ee25cde40fdb9454954e4fbb4b5"
 # => #<Datacentred::Model::User id="2bd21ee25cde40fdb9454954e4fbb4b5", ...>
 ```
 
 ### Update a project
 
 ```ruby
-Datacentred::Project.update "6d5277716c4b10d2177814af50b77175", name: "Foo"
+project      = Datacentred::Project.find "6d5277716c4b10d2177814af50b77175"
+project.name = "Foo"
+project.save
 # => #<Datacentred::Model::Project id="6d5277716c4b10d2177814af50b77175", name= "Foo", ...>
 ```
 
@@ -103,21 +109,25 @@ Datacentred::Project.update "6d5277716c4b10d2177814af50b77175", name: "Foo"
 Acceptable permissions are: 'api.read', 'cloud.read', 'roles.modify', 'roles.read', 'storage.read', 'tickets.modify', 'usage.read'.
 
 ```ruby
-Datacentred::Role.create name: "foo", permissions: ["usage.read"]
+role = Datacentred::Role.create name: "foo", permissions: ["usage.read"]
 # => #<Datacentred::Model::Role id="654f423e-646a-4742-849d-d8c9ab9b4f39", name="foo", admin=false, permissions=["usage.read"] ...>
 ```
 
 ### Add a user to a role
 
 ```ruby
-Datacentred::Role.add_user role_id: "654f423e-646a-4742-849d-d8c9ab9b4f39", user_id: "2bd21ee25cde40fdb9454954e4fbb4b5"
+role = Dataentred::Role.find  "654f423e-646a-4742-849d-d8c9ab9b4f39"
+user = Datacentred::User.find "2bd21ee25cde40fdb9454954e4fbb4b5"
+role.add_user user
 # => true
 ```
 
 ### Remove a user from a project
 
 ```ruby
-Datacentred::Project.remove_user project_id: "6d5277716c4b10d2177814af50b77175", user_id: "2bd21ee25cde40fdb9454954e4fbb4b5"
+user    = Datacentred::User.find    "2bd21ee25cde40fdb9454954e4fbb4b5"
+project = Datacentred::Project.find "6d5277716c4b10d2177814af50b77175"
+project.remove_user user
 # => true
 ```
 
