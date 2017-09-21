@@ -19,6 +19,7 @@ module Datacentred
   require_relative 'datacentred/request/usage'
   require_relative 'datacentred/request/users'
   require_relative 'datacentred/response'
+  require_relative 'datacentred/version'
 
   # Access key credential for the DataCentred API.
   #
