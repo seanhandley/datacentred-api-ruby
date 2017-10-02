@@ -58,6 +58,7 @@ module Datacentred
             faraday.headers['Accept']        = "#{accept_type}; version=#{api_version}"
             faraday.headers['Authorization'] = "Token token=#{credentials}"
             faraday.headers['Content-Type']  = 'application/json'
+            faraday.headers['User-Agent']    = "datacentred/ruby v#{VERSION}"
             faraday.path_prefix              = '/api/'
           end
         end

@@ -1,6 +1,8 @@
+require_relative 'lib/datacentred/version'
+
 Gem::Specification.new do |gem|
   gem.name        = 'datacentred'
-  gem.version     = '1.1.1'
+  gem.version     = Datacentred::VERSION
   gem.date        = '2017-09-14'
   gem.summary     = 'datacentred'
   gem.description = 'Ruby client library for automating DataCentred account management.'
